@@ -10,3 +10,7 @@
 .services-link {
   text-decoration: none;
 }
+
+.card {
+  max-width: 540px;
+}

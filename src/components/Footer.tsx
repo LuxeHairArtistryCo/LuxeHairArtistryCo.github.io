@@ -1,6 +1,5 @@
 import "./Header.css";
 import { ReactNode } from "react";
-import Popper from "popper.js";
 
 type Props = {
   children?: ReactNode;
@@ -19,7 +18,7 @@ const DefaultProps = {
   mobileMenuImageAlt: "/luxehairartistrylogo_transparent-200h.png",
 };
 
-function Header({
+function Footer({
   children,
   imageSrc,
   imageAlt,
@@ -92,6 +91,6 @@ function Header({
   );
 }
 
-Header.defaultProps = DefaultProps;
+Footer.defaultProps = DefaultProps;
 
-export default Header;
+export default Footer;

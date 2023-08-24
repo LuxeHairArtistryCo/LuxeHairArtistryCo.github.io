@@ -1,23 +1,24 @@
 import { ReactNode } from "react";
 
-import { Helmet } from "react-helmet";
-
 import "./home.css";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 type PropTypes = {
   children?: ReactNode;
 };
 
-const Home = (props: PropTypes) => {
+function Home({ children }: PropTypes) {
   return (
     <div className="home-container">
-      <Helmet>
-        <title>Luxe Hair Artistry Co Hair Salon Nair Aesthetician</title>
-        <meta
-          property="og:title"
-          content="Luxe Hair Artistry Co Hair Salon Nair Aesthetician"
-        />
-      </Helmet>
+      <HelmetProvider>
+        <Helmet>
+          <title>Luxe Hair Artistry Co</title>
+          <meta
+            property="og:title"
+            content="Luxe Hair Artistry Co Hair Salon Nair Aesthetician"
+          />
+        </Helmet>
+      </HelmetProvider>
       <div className="home-hero">
         <div className="home-container1">
           <h1 className="home-text">Magnificent things are very simple</h1>
@@ -120,8 +121,9 @@ const Home = (props: PropTypes) => {
           className="home-image1"
         />
       </div>
+      {children}
     </div>
   );
-};
+}
 
 export default Home;

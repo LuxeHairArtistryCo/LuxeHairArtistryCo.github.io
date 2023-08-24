@@ -1,33 +1,41 @@
-import { useState } from "react";
+import { Children, ReactNode, useState } from "react";
 
 interface Props {
+  children?: ReactNode;
   onSelectItem: (item: string) => void;
-  items: string[];
-  heading: string;
+  listItems: string[];
+  enableOnClick: boolean;
 }
 
-function ListGroup({ items, heading, onSelectItem }: Props) {
+function ListGroup({
+  children,
+  listItems,
+  enableOnClick,
+  onSelectItem,
+}: Props) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
   return (
     <>
-      <h1>{heading}</h1>
       <ul className="list-group">
-        {items.map((item, index) => (
+        {listItems.map((listItem, listIndex) => (
           <li
             className={
-              "list-group-item" + " " + (selectedIndex === index && "active")
+              "list-group-item-" + (selectedIndex === listIndex && "active")
             }
-            key={item}
+            key={listItem}
             onClick={() => {
-              setSelectedIndex(index);
-              onSelectItem(item);
+              if (enableOnClick) {
+                setSelectedIndex(listIndex);
+                onSelectItem(listItem);
+              }
             }}
           >
-            {item}
+            {listItem}
           </li>
         ))}
       </ul>
+      {children}
     </>
   );
 }

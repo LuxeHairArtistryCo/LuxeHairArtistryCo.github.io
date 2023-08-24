@@ -92,4 +92,12 @@
     text-transform: none;
     text-decoration: none;
   }
+
+  .App {
+    position: relative;
+  }
+
+  .Header {
+    position: absolute;
+  }
   
