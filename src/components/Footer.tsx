@@ -1,37 +1,18 @@
-import "./Header.css";
+import "./Footer.css";
 import { ReactNode } from "react";
+import { Global } from "../global";
 
 type Props = {
   children?: ReactNode;
-  imageSrc?: string;
-  imageAlt?: string;
-  button?: string;
-  mobileMenuImageSrc?: string;
-  mobileMenuImageAlt?: string;
-} & typeof DefaultProps;
-
-const DefaultProps = {
-  imageSrc: "/luxehairartistrylogo_transparent-200h.png",
-  imageAlt: "/luxehairartistrylogo_transparent-200h.png",
-  button: "Book Now\n",
-  mobileMenuImageSrc: "/luxehairartistrylogo_transparent-200h.png",
-  mobileMenuImageAlt: "/luxehairartistrylogo_transparent-200h.png",
 };
 
-function Footer({
-  children,
-  imageSrc,
-  imageAlt,
-  button,
-  mobileMenuImageAlt,
-  mobileMenuImageSrc,
-}: Props) {
+function Footer({ children }: Props) {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
-            <img alt={imageAlt} src={imageSrc} className="header-image" />
+            <img src={Global.logo_200px} className="header-image" />
           </a>
           <button
             className="navbar-toggler"
@@ -90,7 +71,5 @@ function Footer({
     </>
   );
 }
-
-Footer.defaultProps = DefaultProps;
 
 export default Footer;

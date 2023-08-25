@@ -1,9 +1,9 @@
-import { Children, ReactNode, useState } from "react";
+import { ReactNode, useState } from "react";
 
 interface Props {
   children?: ReactNode;
   onSelectItem: (item: string) => void;
-  listItems: string[];
+  listItems: any[];
   enableOnClick: boolean;
 }
 
@@ -21,18 +21,17 @@ function ListGroup({
         {listItems.map((listItem, listIndex) => (
           <li
             className={
-              "list-group-item-" + (selectedIndex === listIndex && "active")
+              "list-group-item-" +
+              (enableOnClick && selectedIndex === listIndex && "active")
             }
-            key={listItem}
+            key={listItem.name}
             onClick={() => {
               if (enableOnClick) {
                 setSelectedIndex(listIndex);
                 onSelectItem(listItem);
               }
             }}
-          >
-            {listItem}
-          </li>
+          ></li>
         ))}
       </ul>
       {children}

@@ -1,5 +1,8 @@
+import { ReactNode } from "react";
+
 interface Props {
-  color?:
+  children?: ReactNode;
+  color:
     | "primary"
     | "secondary"
     | "success"
@@ -9,13 +12,16 @@ interface Props {
     | "light"
     | "dark"
     | "link";
-  children: string;
   onClick: () => void;
 }
 
+const style: React.CSSProperties = {
+  whiteSpace: "pre-line",
+};
+
 const Button = ({ children, onClick, color = "primary" }: Props) => {
   return (
-    <button className={"btn btn-" + color} onClick={onClick}>
+    <button className={"btn btn-" + color} onClick={onClick} style={style}>
       {children}
     </button>
   );

@@ -1,4 +1,24 @@
-# React + TypeScript + Vite
+# Luxe Hair Artistry Website
+
+## Version 0.0.0
+
+To run the development server:
+
+```console
+   npm run dev
+```
+
+To build and publish to gh-pages:
+
+```console
+   npm run deploy
+```
+
+# About
+
+Built with React + TypeScript + Vite
+
+# OLD README
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -13,7 +33,7 @@ If you are developing a production application, we recommend updating the config
 
 - Configure the top-level `parserOptions` property like this:
 
-```js
+```console
    parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',

@@ -1,67 +1,53 @@
+import { Link as ReactLink } from "react-router-dom";
+import { Global } from "../global";
 import "./Header.css";
 import { ReactNode } from "react";
-import Popper from "popper.js";
 
 type Props = {
   children?: ReactNode;
-  imageSrc?: string;
-  imageAlt?: string;
-  button?: string;
-  mobileMenuImageSrc?: string;
-  mobileMenuImageAlt?: string;
-} & typeof DefaultProps;
-
-const DefaultProps = {
-  imageSrc: "/luxehairartistrylogo_transparent-200h.png",
-  imageAlt: "/luxehairartistrylogo_transparent-200h.png",
-  button: "Book Now\n",
-  mobileMenuImageSrc: "/luxehairartistrylogo_transparent-200h.png",
-  mobileMenuImageAlt: "/luxehairartistrylogo_transparent-200h.png",
 };
 
-function Header({
-  children,
-  imageSrc,
-  imageAlt,
-  button,
-  mobileMenuImageAlt,
-  mobileMenuImageSrc,
-}: Props) {
+function Header({ children }: Props) {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
-            <img alt={imageAlt} src={imageSrc} className="header-image" />
-          </a>
+          <ReactLink className="navbar-brand" to="/">
+            <img src={Global.logo_200px} className="header-image" />
+          </ReactLink>
           <button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
+            data-bs-target="#navbar"
+            aria-controls="navbar"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className="navbar-collapse collapse" id="navbar">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link" href="/about">
+                <ReactLink className="nav-link" to="/about">
                   About
-                </a>
+                </ReactLink>
               </li>
-              <li className="nav-item dropdown">
-                <a
+              <li className="nav-item">
+                <ReactLink className="nav-link" to="/artists">
+                  Artists
+                </ReactLink>
+              </li>
+              {/* <li className="nav-item dropdown">
+                <ReactLink
                   className="nav-link dropdown-toggle"
-                  href="/services"
+                  to="/services"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
                   Services
-                </a>
+                </ReactLink>
                 <ul className="dropdown-menu">
                   <li>
                     <a className="dropdown-item" href="#">
@@ -82,7 +68,7 @@ function Header({
                     </a>
                   </li>
                 </ul>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
@@ -91,7 +77,5 @@ function Header({
     </>
   );
 }
-
-Header.defaultProps = DefaultProps;
 
 export default Header;
