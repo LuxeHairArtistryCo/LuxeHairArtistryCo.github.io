@@ -11,8 +11,7 @@ export namespace ArtistCardGroupNS {
     imagePath: string;
     bookNowButtonText: string;
     bookNowButtonLink: string;
-    seeAllServicesButtonEnable: boolean;
-    services: ServiceListGroupNS.Service[];
+    services?: ServiceListGroupNS.Service[];
   };
 }
 
@@ -27,13 +26,13 @@ function ArtistCardGroup({ children, artistList }: Props) {
       <div className="row row-cols-1 w-100 g-4">
         <div className="col">
           {artistList.map((artist, index) => (
-            <div className="card my-3" key={artist.name}>
+            <div className="card my-3" key={artist.id}>
               <div
                 className={
                   "row g-0 d-flex " + (index % 2 === 1 && "flex-row-reverse")
                 }
               >
-                <div className="col-md-4">
+                <div className="col-md-4 border-start border-end">
                   <img className="card-img" src={artist.imagePath} />
                 </div>
 
@@ -55,28 +54,38 @@ function ArtistCardGroup({ children, artistList }: Props) {
                           {artist.bookNowButtonText}
                         </Button>
                       </div>
-                      {artist.seeAllServicesButtonEnable && (
-                        <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
-                          <button
-                            className="btn btn-secondary"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target={"#dropdown" + artist.id}
-                            aria-expanded="false"
-                          >
-                            See Full Service List
-                          </button>
-                        </div>
-                      )}
+                      {artist.services !== undefined &&
+                        artist.services.length !== 0 && (
+                          <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
+                            <button
+                              className="btn btn-secondary"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target={"#dropdown" + artist.id}
+                              aria-expanded="false"
+                            >
+                              See Full Service List
+                            </button>
+                          </div>
+                        )}
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="row g-0 collapse" id={"dropdown" + artist.id}>
-                <div className="col-md-4 ">
-                  <ServiceListGroup />
-                </div>
-              </div>
+              {artist.services !== undefined &&
+                artist.services.length !== 0 && (
+                  <div
+                    className="row g-0 collapse border-top"
+                    id={"dropdown" + artist.id}
+                  >
+                    <div className="col my-2">
+                      <ServiceListGroup
+                        artistID={artist.id}
+                        serviceList={artist.services}
+                      />
+                    </div>
+                  </div>
+                )}
             </div>
           ))}
         </div>

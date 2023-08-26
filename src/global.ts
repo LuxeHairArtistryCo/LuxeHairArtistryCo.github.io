@@ -1,9 +1,40 @@
 import { ArtistCardGroupNS } from "./components/ArtistCardGroup";
 
 export namespace Global {
-    export const logo_200px = "images/luxehairartistrylogo_transparent-200h.png";
-    export const logo_1500px =
+    export const logo_blk_200px = "images/luxehairartistrylogo_transparent-200h.png";
+    export const logo_blk_1500px =
         "images/luxehairartistrylogo_transparent-1500h.png";
+    export const logo_wht_1500px =
+        "images/luxehairartistrylogo_white_transparent-1500h.png";
+
+    export type HoursOfOp = {
+        sunday: string,
+        monday: string,
+        tuesday: string,
+        wednesday: string,
+        thursday: string,
+        friday: string,
+        saturday: string,
+        notes?: string,
+    };
+
+    export const hoursOfOp: HoursOfOp = {
+        sunday: "Closed",
+        monday: "10am - 5pm",
+        tuesday: "10am - 5pm",
+        wednesday: "10am - 5pm",
+        thursday: "10am - 5pm",
+        friday: "10am - 5pm",
+        saturday: "By Appointment Only",
+        notes: "Evening and Saturday appointments are avaliable upon request"
+    };
+
+
+    export const contactInfo: string[][] = [
+        ["Address: ", "20 Churchill Crescent"],
+        ["", "St Thomas, ON N5R 1N8"],
+        ["Phone: ", "519-207-1111"],
+    ]
 
     export const artists: ArtistCardGroupNS.Artist[] = [
         {
@@ -15,7 +46,6 @@ export namespace Global {
             bookNowButtonText:
                 "Text to Book an Appointment with Rhonda\n226-998-1227",
             bookNowButtonLink: "sms:+12269981227",
-            seeAllServicesButtonEnable: true,
             services: [
                 { type: "group", name: "Haircuts", },
                 { type: "item", name: "Woman's Haircut", price: "$30", },
@@ -33,8 +63,6 @@ export namespace Global {
                 { type: "item", name: "Wash, Cut & Style", price: "$45", },
                 { type: "group", name: "Toner", },
                 { type: "item", name: "Toner", price: "$50", },
-                { type: "group", name: "Scalp Massage", },
-                { type: "item", name: "Scalp Massage", price: "$55", },
                 { type: "group", name: "Balayage", },
                 { type: "item", name: "Balayage", price: "$150+", },
                 { type: "group", name: "Extensions", },
@@ -42,6 +70,7 @@ export namespace Global {
 
             ],
         },
+
         {
             id: "ria",
             name: "Ria",
@@ -51,9 +80,8 @@ export namespace Global {
             bookNowButtonText: "Book Now with Ria",
             bookNowButtonLink:
                 "https://www.fresha.com/a/luxe-hair-artistry-co-st-thomas-20-churchill-crescent-d3m2puen",
-            seeAllServicesButtonEnable: false,
-            services: [],
         },
+
         {
             id: "kim-ferguson",
             name: "Kim Ferguson",
@@ -62,7 +90,6 @@ export namespace Global {
             imagePath: "images/artist_headshots/kim_ferguson.jpg",
             bookNowButtonText: "Text to Book an Appointment with Kim\nXXX-XXX-XXXX",
             bookNowButtonLink: "sms:+XXXXXXXXXX",
-            seeAllServicesButtonEnable: true,
             services: [
                 { type: "group", name: "Natural Nail Enhancements", },
                 { type: "subgroup", name: "BioSculpture Gel", description: "BioSculpture Gel is a Superior product making nails beautiful, flexible and durable, without any Damage. It is a one step system that strengthens and promotes the growth of natural nails. It is applied onto the natural nail or used to create strong and comfortable tips for added length. ", },
