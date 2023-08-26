@@ -1,19 +1,23 @@
 import { Link as ReactLink } from "react-router-dom";
-import { Global } from "../global";
-import "./Header.css";
 import { ReactNode } from "react";
 
 type Props = {
   children?: ReactNode;
+  logoPath: string;
 };
 
-function Header({ children }: Props) {
+function Header({ children, logoPath }: Props) {
+  const headerLogoMaxHeight = 75;
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
+        <div className="container-fluid d-flex align-items-center">
           <ReactLink className="navbar-brand" to="/">
-            <img src={Global.logo_200px} className="header-image" />
+            <img
+              src={logoPath}
+              className="header-image"
+              style={{ maxHeight: headerLogoMaxHeight }}
+            />
           </ReactLink>
           <button
             className="navbar-toggler"
@@ -38,37 +42,41 @@ function Header({ children }: Props) {
                   Artists
                 </ReactLink>
               </li>
-              {/* <li className="nav-item dropdown">
+              {/* <li className="nav-item">
                 <ReactLink
-                  className="nav-link dropdown-toggle"
-                  to="/services"
-                  role="button"
+                  className="nav-link dropdown-toggle dropdown-toggle-split"
+                  to="/artists"
+                  type="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Services
-                </ReactLink>
-                <ul className="dropdown-menu">
+                  Artists
+                </ReactLink> 
+
+                 <ul className="dropdown-menu">
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Action
-                    </a>
+                    <ReactLink className="dropdown-item" to="/artists/#rhonda">
+                      Rhonda
+                    </ReactLink>
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Another action
-                    </a>
+                    <ReactLink className="dropdown-item" to="/artists/#ria">
+                      Ria
+                    </ReactLink>
                   </li>
                   <li>
                     <hr className="dropdown-divider" />
                   </li>
                   <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
+                    <ReactLink
+                      className="dropdown-item"
+                      to="/artists/#kim-ferguson"
+                    >
+                      Kim
+                    </ReactLink>
                   </li>
-                </ul>
-              </li> */}
+                </ul> 
+              </li>*/}
             </ul>
           </div>
         </div>

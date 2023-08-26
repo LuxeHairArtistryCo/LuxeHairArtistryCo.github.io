@@ -14,6 +14,12 @@ To build and publish to gh-pages:
    npm run deploy
 ```
 
+Password to unprotect the Pricelist Excel Sheet:
+
+```console
+   luxe_pricelist
+```
+
 # About
 
 Built with React + TypeScript + Vite

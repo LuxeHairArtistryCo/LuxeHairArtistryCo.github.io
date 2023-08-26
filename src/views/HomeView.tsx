@@ -1,13 +1,12 @@
 import { ReactNode } from "react";
 
-import "./home.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
 type PropTypes = {
   children?: ReactNode;
 };
 
-function Home({ children }: PropTypes) {
+function HomeView({ children }: PropTypes) {
   return (
     <div className="home-container">
       <HelmetProvider>
@@ -126,4 +125,4 @@ function Home({ children }: PropTypes) {
   );
 }
 
-export default Home;
+export default HomeView;

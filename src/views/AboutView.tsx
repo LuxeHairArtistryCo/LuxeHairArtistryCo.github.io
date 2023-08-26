@@ -1,13 +1,12 @@
 import { ReactNode } from "react";
 
-import "./about.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
 type PropTypes = {
   children?: ReactNode;
 };
 
-function About({ children }: PropTypes) {
+function AboutView({ children }: PropTypes) {
   return (
     <div className="about-container">
       <HelmetProvider>
@@ -24,4 +23,4 @@ function About({ children }: PropTypes) {
   );
 }
 
-export default About;
+export default AboutView;
