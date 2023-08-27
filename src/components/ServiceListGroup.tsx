@@ -11,11 +11,17 @@ export namespace ServiceListGroupNS {
 
 interface Props {
   children?: ReactNode;
+  className?: string;
   artistID: string;
   serviceList: ServiceListGroupNS.Service[];
 }
 
-function ServiceListGroup({ children, artistID, serviceList }: Props) {
+function ServiceListGroup({
+  children,
+  className,
+  artistID,
+  serviceList,
+}: Props) {
   const getServiceListItemClassName = (
     service: ServiceListGroupNS.Service,
     index: number
@@ -62,7 +68,7 @@ function ServiceListGroup({ children, artistID, serviceList }: Props) {
   };
 
   return (
-    <>
+    <div className={className}>
       <ul className="list-group list-group-flush">
         {serviceList.map((service, index) => (
           <li
@@ -74,7 +80,7 @@ function ServiceListGroup({ children, artistID, serviceList }: Props) {
         ))}
       </ul>
       {children}
-    </>
+    </div>
   );
 }
 

@@ -20,7 +20,9 @@ function ArtistsView({ children }: PropTypes) {
           />
         </Helmet>
       </HelmetProvider>
-      <div className="container d-flex align-items-center justify-content-center">
+      <div className="container d-flex flex-column px-3">
+        <h1>Meet Our Artists</h1>
+        <p className="mx-3 pt-3">We are a team!</p>
         <ArtistCardGroup artistList={Global.artists} />
         {children}
       </div>

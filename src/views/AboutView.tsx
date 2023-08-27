@@ -18,7 +18,11 @@ function AboutView({ children }: PropTypes) {
           />
         </Helmet>
       </HelmetProvider>
-      {children}
+      <div className="container d-flex flex-column px-3">
+        <h1>About Us</h1>
+        <p className="mx-3 pt-3">We are a team!</p>
+        {children}
+      </div>
     </div>
   );
 }

@@ -44,7 +44,7 @@ export namespace Global {
             bio: "Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph.",
             imagePath: "images/artist_headshots/rhonda_marttunen.jpg",
             bookNowButtonText:
-                "Text to Book an Appointment with Rhonda\n226-998-1227",
+                "Text to Book an Appointment with Rhonda: 226-998-1227",
             bookNowButtonLink: "sms:+12269981227",
             services: [
                 { type: "group", name: "Haircuts", },
@@ -88,7 +88,7 @@ export namespace Global {
             position: "Aesthetician",
             bio: "Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph.",
             imagePath: "images/artist_headshots/kim_ferguson.jpg",
-            bookNowButtonText: "Text to Book an Appointment with Kim\nXXX-XXX-XXXX",
+            bookNowButtonText: "Text to Book an Appointment with Kim: XXX-XXX-XXXX",
             bookNowButtonLink: "sms:+XXXXXXXXXX",
             services: [
                 { type: "group", name: "Natural Nail Enhancements", },

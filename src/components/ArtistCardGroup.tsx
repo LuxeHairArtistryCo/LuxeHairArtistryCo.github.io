@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import Button from "./Button";
 import ServiceListGroup, { ServiceListGroupNS } from "./ServiceListGroup";
+import { Link as ReactLink } from "react-router-dom";
 
 export namespace ArtistCardGroupNS {
   export type Artist = {
@@ -17,81 +17,81 @@ export namespace ArtistCardGroupNS {
 
 interface Props {
   children?: ReactNode;
+  className?: string;
   artistList: ArtistCardGroupNS.Artist[];
 }
 
-function ArtistCardGroup({ children, artistList }: Props) {
+function ArtistCardGroup({ children, className, artistList }: Props) {
   return (
-    <>
-      <div className="row row-cols-1 w-100 g-4">
-        <div className="col">
-          {artistList.map((artist, index) => (
-            <div className="card my-3" key={artist.id}>
-              <div
-                className={
-                  "row g-0 d-flex " + (index % 2 === 1 && "flex-row-reverse")
-                }
-              >
-                <div className="col-md-4 border-start border-end">
-                  <img className="card-img" src={artist.imagePath} />
-                </div>
+    <div className={className}>
+      {artistList.map((artist, index) => (
+        <div className="card my-3" key={artist.id}>
+          <div
+            className={
+              "row g-0 d-flex " + (index % 2 === 1 && "flex-row-reverse")
+            }
+          >
+            <div className="col-md-4 border-start border-end">
+              <img className="card-img" src={artist.imagePath} />
+            </div>
 
-                <div className="col-md-8 d-flex flex-column justify-content-between">
-                  <div className="card-header">
-                    <h5 className="card-title">{artist.name}</h5>
-                    <h6 className="card-text">{artist.position}</h6>
+            <div className="col-md-8 d-flex flex-column justify-content-between">
+              <div className="card-header">
+                <h5 className="card-title">{artist.name}</h5>
+                <h6 className="card-text">{artist.position}</h6>
+              </div>
+              <div className="card-body">
+                <p className="card-text">{artist.bio}</p>
+              </div>
+              <div className="card-footer">
+                <div className="row d-flex justify-content-center mx-0">
+                  <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
+                    <ReactLink
+                      className="btn btn-primary"
+                      to={artist.bookNowButtonLink}
+                      role="button"
+                      target="_blank"
+                      style={{
+                        whiteSpace: "pre-line",
+                      }}
+                    >
+                      {artist.bookNowButtonText}
+                    </ReactLink>
                   </div>
-                  <div className="card-body">
-                    <p className="card-text">{artist.bio}</p>
-                  </div>
-                  <div className="card-footer">
-                    <div className="row d-flex justify-content-center mx-0">
+                  {artist.services !== undefined &&
+                    artist.services.length !== 0 && (
                       <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
-                        <Button
-                          color={"primary"}
-                          onClick={() => window.open(artist.bookNowButtonLink)}
+                        <button
+                          className="btn btn-secondary"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target={"#dropdown" + artist.id}
+                          aria-expanded="false"
                         >
-                          {artist.bookNowButtonText}
-                        </Button>
+                          See Full Service List
+                        </button>
                       </div>
-                      {artist.services !== undefined &&
-                        artist.services.length !== 0 && (
-                          <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
-                            <button
-                              className="btn btn-secondary"
-                              type="button"
-                              data-bs-toggle="collapse"
-                              data-bs-target={"#dropdown" + artist.id}
-                              aria-expanded="false"
-                            >
-                              See Full Service List
-                            </button>
-                          </div>
-                        )}
-                    </div>
-                  </div>
+                    )}
                 </div>
               </div>
-              {artist.services !== undefined &&
-                artist.services.length !== 0 && (
-                  <div
-                    className="row g-0 collapse border-top"
-                    id={"dropdown" + artist.id}
-                  >
-                    <div className="col my-2">
-                      <ServiceListGroup
-                        artistID={artist.id}
-                        serviceList={artist.services}
-                      />
-                    </div>
-                  </div>
-                )}
             </div>
-          ))}
+          </div>
+          {artist.services !== undefined && artist.services.length !== 0 && (
+            <div
+              className="row g-0 collapse border-top"
+              id={"dropdown" + artist.id}
+            >
+              <ServiceListGroup
+                className="col my-2"
+                artistID={artist.id}
+                serviceList={artist.services}
+              />
+            </div>
+          )}
         </div>
-      </div>
+      ))}
       {children}
-    </>
+    </div>
   );
 }
 
