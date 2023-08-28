@@ -22,8 +22,16 @@ function ArtistsView({ children }: PropTypes) {
       </HelmetProvider>
       <div className="container d-flex flex-column px-3">
         <h1>Meet Our Artists</h1>
-        <p className="mx-3 pt-3">We are a team!</p>
-        <ArtistCardGroup artistList={Global.artists} />
+        <p className="mx-3 pt-3">
+          We offer a wide variety of serivces between our hairstylists and
+          in-house aesthetician.
+        </p>
+        <ArtistCardGroup artistList={Global.artists_hairstylists} />
+        <h4 className="mt-4">Luxe Aesthetic Studio</h4>
+        <ArtistCardGroup artistList={Global.artists_aestheticians} />
+        <i className="mx-3 pt-3">
+          <small>Prices are subject to change.</small>
+        </i>
         {children}
       </div>
     </>

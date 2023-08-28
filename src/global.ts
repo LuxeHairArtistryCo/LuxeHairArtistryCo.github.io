@@ -7,6 +7,16 @@ export namespace Global {
     export const logo_wht_1500px =
         "images/luxehairartistrylogo_white_transparent-1500h.png";
 
+    export type Links = {
+        instagram: string;
+        facebook: string;
+    }
+
+    export const links = {
+        instagram: "https://www.instagram.com/luxehairartistryco/",
+        facebook: "https://www.facebook.com/luxehairartistryco/",
+    }
+
     export type HoursOfOp = {
         sunday: string,
         monday: string,
@@ -21,12 +31,12 @@ export namespace Global {
     export const hoursOfOp: HoursOfOp = {
         sunday: "Closed",
         monday: "10am - 5pm",
-        tuesday: "10am - 5pm",
-        wednesday: "10am - 5pm",
+        tuesday: "10am - 8:30pm",
+        wednesday: "10am - 8:30pm",
         thursday: "10am - 5pm",
         friday: "10am - 5pm",
         saturday: "By Appointment Only",
-        notes: "Evening and Saturday appointments are avaliable upon request"
+        notes: "Hours may vary amongst artists. Appointments are recommended."
     };
 
 
@@ -36,16 +46,19 @@ export namespace Global {
         ["Phone: ", "519-207-1111"],
     ]
 
-    export const artists: ArtistCardGroupNS.Artist[] = [
+    export const artists_hairstylists: ArtistCardGroupNS.Artist[] = [
         {
             id: "rhonda-marttunen",
             name: "Rhonda Marttunen",
             position: "Hairstylist & Owner",
-            bio: "Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph.",
+            bio: "30 years of experience! Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph.",
             imagePath: "images/artist_headshots/rhonda_marttunen.jpg",
             bookNowButtonText:
-                "Text to Book an Appointment with Rhonda: 226-998-1227",
+                "Text: 226-998-1227",
             bookNowButtonLink: "sms:+12269981227",
+            secondaryBookNowButtonText:
+                "Call: 519-702-1111",
+            secondaryBookNowButtonLink: "tel:15192071111",
             services: [
                 { type: "group", name: "Haircuts", },
                 { type: "item", name: "Woman's Haircut", price: "$30", },
@@ -72,24 +85,29 @@ export namespace Global {
         },
 
         {
-            id: "ria",
-            name: "Ria",
+            id: "ria-butler",
+            name: "Victoria Butler",
             position: "Hairstylist",
-            bio: "Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph.",
-            imagePath: "",
-            bookNowButtonText: "Book Now with Ria",
+            bio: "Victoria is a St. Thomas based licensed hairstylist, who has worked in the industry since 2014. She has trained with celebrity hair stylists, worked on magazine photo shoots, and prioritizes the integrity of the hair while achieving your desired look. She specializes in corrective colour and blonding services, also offering a variety of cutting and facial waxing services.",
+            imagePath: "images/artist_headshots/ria_butler.jpg",
+            bookNowButtonText: "Book Online",
             bookNowButtonLink:
                 "https://www.fresha.com/a/luxe-hair-artistry-co-st-thomas-20-churchill-crescent-d3m2puen",
+            secondaryBookNowButtonText:
+                "Call: 519-702-1111",
+            secondaryBookNowButtonLink: "tel:15192071111",
         },
+    ];
 
+    export const artists_aestheticians: ArtistCardGroupNS.Artist[] = [
         {
             id: "kim-ferguson",
             name: "Kim Ferguson",
             position: "Aesthetician",
             bio: "Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph.",
             imagePath: "images/artist_headshots/kim_ferguson.jpg",
-            bookNowButtonText: "Text to Book an Appointment with Kim: XXX-XXX-XXXX",
-            bookNowButtonLink: "sms:+XXXXXXXXXX",
+            bookNowButtonText: "Text: 705-627-5135",
+            bookNowButtonLink: "sms:+7056275135",
             services: [
                 { type: "group", name: "Natural Nail Enhancements", },
                 { type: "subgroup", name: "BioSculpture Gel", description: "BioSculpture Gel is a Superior product making nails beautiful, flexible and durable, without any Damage. It is a one step system that strengthens and promotes the growth of natural nails. It is applied onto the natural nail or used to create strong and comfortable tips for added length. ", },

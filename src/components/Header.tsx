@@ -11,7 +11,7 @@ function Header({ children, className, logoPath }: Props) {
   const headerLogoMaxHeight = 75;
   return (
     <div className={className}>
-      <div className="container-fluid mx-0 mb-5 bg-body-tertiary">
+      <div className="container-fluid mx-0 mb-4 text-bg-dark">
         <nav className="navbar navbar-expand-md px-4">
           <ReactLink className="navbar-brand" to="/">
             <img
@@ -34,12 +34,12 @@ function Header({ children, className, logoPath }: Props) {
           <div className="navbar-collapse collapse" id="navbar">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <ReactLink className="nav-link" to="/about">
+                <ReactLink className="nav-link text-light" to="/about">
                   About
                 </ReactLink>
               </li>
               <li className="nav-item">
-                <ReactLink className="nav-link" to="/artists">
+                <ReactLink className="nav-link text-light" to="/artists">
                   Artists
                 </ReactLink>
               </li>

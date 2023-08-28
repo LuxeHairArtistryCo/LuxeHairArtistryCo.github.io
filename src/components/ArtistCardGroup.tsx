@@ -11,6 +11,8 @@ export namespace ArtistCardGroupNS {
     imagePath: string;
     bookNowButtonText: string;
     bookNowButtonLink: string;
+    secondaryBookNowButtonText?: string;
+    secondaryBookNowButtonLink?: string;
     services?: ServiceListGroupNS.Service[];
   };
 }
@@ -25,7 +27,11 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
   return (
     <div className={className}>
       {artistList.map((artist, index) => (
-        <div className="card my-3" key={artist.id}>
+        <div
+          className="card my-3"
+          key={artist.id}
+          style={{ background: "#DAE7E1" }}
+        >
           <div
             className={
               "row g-0 d-flex " + (index % 2 === 1 && "flex-row-reverse")
@@ -36,7 +42,12 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
             </div>
 
             <div className="col-md-8 d-flex flex-column justify-content-between">
-              <div className="card-header">
+              <div
+                className="card-header text-light"
+                style={{
+                  background: "#3d5949",
+                }}
+              >
                 <h5 className="card-title">{artist.name}</h5>
                 <h6 className="card-text">{artist.position}</h6>
               </div>
@@ -53,16 +64,35 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
                       target="_blank"
                       style={{
                         whiteSpace: "pre-line",
+                        background: "#3d5949",
+                        border: "#3d5949",
                       }}
                     >
                       {artist.bookNowButtonText}
                     </ReactLink>
                   </div>
+                  {artist.secondaryBookNowButtonLink !== undefined && (
+                    <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
+                      <ReactLink
+                        className="btn btn-primary"
+                        to={artist.secondaryBookNowButtonLink}
+                        role="button"
+                        target="_blank"
+                        style={{
+                          whiteSpace: "pre-line",
+                          background: "#3d5949",
+                          border: "#3d5949",
+                        }}
+                      >
+                        {artist.secondaryBookNowButtonText}
+                      </ReactLink>
+                    </div>
+                  )}
                   {artist.services !== undefined &&
                     artist.services.length !== 0 && (
                       <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
                         <button
-                          className="btn btn-secondary"
+                          className="btn btn-dark"
                           type="button"
                           data-bs-toggle="collapse"
                           data-bs-target={"#dropdown" + artist.id}

@@ -12,8 +12,8 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <HashRouter>
-      <div className="App">
-        <Header logoPath={Global.logo_blk_1500px} />
+      <div className="App" style={{ background: "#DAE7E1" }}>
+        <Header logoPath={Global.logo_wht_1500px} />
         <Routes>
           <Route element={<HomeView />} path="/" />
           <Route element={<AboutView />} path="/about" />
@@ -23,6 +23,7 @@ function App() {
           logoPath={Global.logo_wht_1500px}
           hoursOfOp={Global.hoursOfOp}
           contactInfo={Global.contactInfo}
+          links={Global.links}
         />
       </div>
     </HashRouter>
