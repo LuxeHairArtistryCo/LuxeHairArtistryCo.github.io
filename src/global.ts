@@ -1,22 +1,32 @@
 import { ArtistCardGroupNS } from "./components/ArtistCardGroup";
 
+export namespace Colors {
+    export const primary = "#3D5949";
+    export const secondary = "#D4E1DB";
+    export const tertiary = "#DAE7E1";
+    export const light = "#FFFFFF";
+    export const dark = "#212529";
+    export const dark_a66 = "#212529AA";
+    export const dark_a50 = "#2125297F";
+    export const dark_a33 = "#21252955";
+}
+
+export namespace Images {
+
+    export const logo_dark =
+        "images/luxe_logo_dark_transparent_1500h.png";
+    export const logo_light =
+        "images/luxe_logo_light_transparent_1500h.png";
+    export const interior_photos: string[] = ["images/hero_images/luxe_interior_01.jpg",]
+
+}
+
+export namespace Links {
+    export const instagram = "https://www.instagram.com/luxehairartistryco/";
+    export const facebook = "https://www.facebook.com/luxehairartistryco/";
+}
+
 export namespace Global {
-    export const logo_blk_200px = "images/luxehairartistrylogo_transparent-200h.png";
-    export const logo_blk_1500px =
-        "images/luxehairartistrylogo_transparent-1500h.png";
-    export const logo_wht_1500px =
-        "images/luxehairartistrylogo_white_transparent-1500h.png";
-
-    export type Links = {
-        instagram: string;
-        facebook: string;
-    }
-
-    export const links = {
-        instagram: "https://www.instagram.com/luxehairartistryco/",
-        facebook: "https://www.facebook.com/luxehairartistryco/",
-    }
-
     export type HoursOfOp = {
         sunday: string,
         monday: string,
@@ -34,7 +44,7 @@ export namespace Global {
         tuesday: "10am - 8:30pm",
         wednesday: "10am - 8:30pm",
         thursday: "10am - 5pm",
-        friday: "10am - 5pm",
+        friday: "am - 5pm",
         saturday: "By Appointment Only",
         notes: "Hours may vary amongst artists. Appointments are recommended."
     };
@@ -51,7 +61,7 @@ export namespace Global {
             id: "rhonda-marttunen",
             name: "Rhonda Marttunen",
             position: "Hairstylist & Owner",
-            bio: "30 years of experience! Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph.",
+            bio: " With over 30 years of experience in haircuts, makeovers, and creating styling, Rhonda has helped hundreds turn the look they envision into reality. Friendly and personable, she loves to see a client leave with a smile on their face. In addition to standard hair services, she specializes in fusion hair extensions and sell a full range of milk_shake products.",
             imagePath: "images/artist_headshots/rhonda_marttunen.jpg",
             bookNowButtonText:
                 "Text: 226-998-1227",
@@ -104,7 +114,6 @@ export namespace Global {
             id: "kim-ferguson",
             name: "Kim Ferguson",
             position: "Aesthetician",
-            bio: "Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph.",
             imagePath: "images/artist_headshots/kim_ferguson.jpg",
             bookNowButtonText: "Text: 705-627-5135",
             bookNowButtonLink: "sms:+7056275135",

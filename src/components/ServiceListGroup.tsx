@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Colors } from "../global";
 
 export namespace ServiceListGroupNS {
   export type Service = {
@@ -22,16 +23,10 @@ function ServiceListGroup({
   artistID,
   serviceList,
 }: Props) {
-  const getServiceListItemClassName = (
-    service: ServiceListGroupNS.Service,
-    index: number
-  ) => {
+  const getServiceListItemClassName = (service: ServiceListGroupNS.Service) => {
     switch (service.type) {
       case "group":
-        return (
-          "list-group-item border-bottom-0 px-4" +
-          (index != 0 ? " border-top" : "")
-        );
+        return "list-group-item border-bottom-0 px-4";
       case "subgroup":
         return "list-group-item border-0 px-4";
       default:
@@ -72,8 +67,12 @@ function ServiceListGroup({
       <ul className="list-group list-group-flush">
         {serviceList.map((service, index) => (
           <li
-            className={getServiceListItemClassName(service, index)}
+            className={getServiceListItemClassName(service)}
             key={artistID + index}
+            style={{
+              background: Colors.tertiary,
+              borderTopColor: Colors.dark,
+            }}
           >
             {getServiceListItem(service)}
           </li>

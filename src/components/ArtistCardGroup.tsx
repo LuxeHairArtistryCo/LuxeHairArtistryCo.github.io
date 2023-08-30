@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import ServiceListGroup, { ServiceListGroupNS } from "./ServiceListGroup";
 import { Link as ReactLink } from "react-router-dom";
+import { Colors } from "../global";
 
 export namespace ArtistCardGroupNS {
   export type Artist = {
@@ -30,7 +31,7 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
         <div
           className="card my-3"
           key={artist.id}
-          style={{ background: "#DAE7E1" }}
+          style={{ background: Colors.tertiary }}
         >
           <div
             className={
@@ -45,7 +46,8 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
               <div
                 className="card-header text-light"
                 style={{
-                  background: "#3d5949",
+                  background: Colors.primary,
+                  WebkitTextFillColor: Colors.light,
                 }}
               >
                 <h5 className="card-title">{artist.name}</h5>
@@ -54,18 +56,18 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
               <div className="card-body">
                 <p className="card-text">{artist.bio}</p>
               </div>
-              <div className="card-footer">
+              <div className="card-footer border-bottom">
                 <div className="row d-flex justify-content-center mx-0">
                   <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
                     <ReactLink
-                      className="btn btn-primary"
+                      className="btn text-light"
                       to={artist.bookNowButtonLink}
                       role="button"
                       target="_blank"
                       style={{
                         whiteSpace: "pre-line",
-                        background: "#3d5949",
-                        border: "#3d5949",
+                        background: Colors.primary,
+                        border: Colors.primary,
                       }}
                     >
                       {artist.bookNowButtonText}
@@ -74,14 +76,14 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
                   {artist.secondaryBookNowButtonLink !== undefined && (
                     <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
                       <ReactLink
-                        className="btn btn-primary"
+                        className="btn text-light"
                         to={artist.secondaryBookNowButtonLink}
                         role="button"
                         target="_blank"
                         style={{
                           whiteSpace: "pre-line",
-                          background: "#3d5949",
-                          border: "#3d5949",
+                          background: Colors.primary,
+                          border: Colors.primary,
                         }}
                       >
                         {artist.secondaryBookNowButtonText}
@@ -92,11 +94,15 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
                     artist.services.length !== 0 && (
                       <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
                         <button
-                          className="btn btn-dark"
+                          className="btn text-light"
                           type="button"
                           data-bs-toggle="collapse"
                           data-bs-target={"#dropdown" + artist.id}
                           aria-expanded="false"
+                          style={{
+                            background: Colors.dark,
+                            border: Colors.dark,
+                          }}
                         >
                           See Full Service List
                         </button>
@@ -110,6 +116,7 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
             <div
               className="row g-0 collapse border-top"
               id={"dropdown" + artist.id}
+              style={{ background: Colors.tertiary }}
             >
               <ServiceListGroup
                 className="col my-2"
