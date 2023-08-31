@@ -15,6 +15,7 @@ export namespace ArtistCardGroupNS {
     secondaryBookNowButtonText?: string;
     secondaryBookNowButtonLink?: string;
     services?: ServiceListGroupNS.Service[];
+    externalServicesLink?: string;
   };
 }
 
@@ -25,6 +26,65 @@ interface Props {
 }
 
 function ArtistCardGroup({ children, className, artistList }: Props) {
+  const serviceListButtonText = "See Full Service List";
+
+  const getServiceListButton = (artist: ArtistCardGroupNS.Artist) => {
+    var isInternalServiceList =
+      artist.services !== undefined && artist.services.length !== 0;
+    var isExternalServiceList = artist.externalServicesLink !== undefined;
+    var ServiceListButton: JSX.Element;
+
+    if (isInternalServiceList && isExternalServiceList) {
+      throw new Error("Two Service Lists configured for " + artist.name);
+    }
+    if (!isInternalServiceList && !isExternalServiceList) {
+      throw new Error("No Service Lists configured for " + artist.name);
+    }
+    if (isInternalServiceList) {
+      ServiceListButton = (
+        <button
+          className="btn text-light"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target={"#dropdown" + artist.id}
+          aria-expanded="false"
+          style={{
+            background: Colors.dark,
+            border: Colors.dark,
+          }}
+        >
+          {serviceListButtonText}
+        </button>
+      );
+    } else {
+      ServiceListButton = (
+        <ReactLink
+          className="btn text-light"
+          to={
+            artist.externalServicesLink !== undefined
+              ? artist.externalServicesLink
+              : ""
+          }
+          role="button"
+          target="_blank"
+          style={{
+            whiteSpace: "pre-line",
+            background: Colors.dark,
+            border: Colors.dark,
+          }}
+        >
+          {serviceListButtonText}
+        </ReactLink>
+      );
+    }
+
+    return (
+      <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
+        {ServiceListButton}
+      </div>
+    );
+  };
+
   return (
     <div className={className}>
       {artistList.map((artist, index) => (
@@ -50,11 +110,17 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
                   WebkitTextFillColor: Colors.light,
                 }}
               >
-                <h5 className="card-title">{artist.name}</h5>
-                <h6 className="card-text">{artist.position}</h6>
+                <h5 className="card-title" style={{ whiteSpace: "pre-line" }}>
+                  {artist.name}
+                </h5>
+                <h6 className="card-text" style={{ whiteSpace: "pre-line" }}>
+                  {artist.position}
+                </h6>
               </div>
               <div className="card-body">
-                <p className="card-text">{artist.bio}</p>
+                <p className="card-text" style={{ whiteSpace: "pre-line" }}>
+                  {artist.bio}
+                </p>
               </div>
               <div className="card-footer border-bottom">
                 <div className="row d-flex justify-content-center mx-0">
@@ -90,24 +156,7 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
                       </ReactLink>
                     </div>
                   )}
-                  {artist.services !== undefined &&
-                    artist.services.length !== 0 && (
-                      <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
-                        <button
-                          className="btn text-light"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target={"#dropdown" + artist.id}
-                          aria-expanded="false"
-                          style={{
-                            background: Colors.dark,
-                            border: Colors.dark,
-                          }}
-                        >
-                          See Full Service List
-                        </button>
-                      </div>
-                    )}
+                  {getServiceListButton(artist)}
                 </div>
               </div>
             </div>

@@ -44,7 +44,7 @@ export namespace Global {
         tuesday: "10am - 8:30pm",
         wednesday: "10am - 8:30pm",
         thursday: "10am - 5pm",
-        friday: "am - 5pm",
+        friday: "10am - 5pm",
         saturday: "By Appointment Only",
         notes: "Hours may vary amongst artists. Appointments are recommended."
     };
@@ -61,7 +61,7 @@ export namespace Global {
             id: "rhonda-marttunen",
             name: "Rhonda Marttunen",
             position: "Hairstylist & Owner",
-            bio: " With over 30 years of experience in haircuts, makeovers, and creating styling, Rhonda has helped hundreds turn the look they envision into reality. Friendly and personable, she loves to see a client leave with a smile on their face. In addition to standard hair services, she specializes in fusion hair extensions and sell a full range of milk_shake products.",
+            bio: "With over 30 years of experience, Rhonda has built up a loyal clientele as a newcomer to St Thomas in 2016. She offers services including colours, cuts, highlights, and balayage, with you and your hair being her top priority. She is also certified in fusion hair extensions to help you achieve your dream hair.",
             imagePath: "images/artist_headshots/rhonda_marttunen.jpg",
             bookNowButtonText:
                 "Text: 226-998-1227",
@@ -82,15 +82,14 @@ export namespace Global {
                 { type: "item", name: "Full Highlights", price: "$95", },
                 { type: "group", name: "Combos", },
                 { type: "item", name: "Wash & Cut", price: "$35", },
-                { type: "item", name: "Wash & Set", price: "$25", },
-                { type: "item", name: "Wash, Cut & Style", price: "$45", },
+                { type: "item", name: "Wash & Set", price: "$25+", },
+                { type: "item", name: "Wash, Cut & Style", price: "$45+", },
                 { type: "group", name: "Toner", },
                 { type: "item", name: "Toner", price: "$50", },
                 { type: "group", name: "Balayage", },
                 { type: "item", name: "Balayage", price: "$150+", },
                 { type: "group", name: "Extensions", },
                 { type: "item", name: "Extensions", price: "$250+", },
-
             ],
         },
 
@@ -102,10 +101,11 @@ export namespace Global {
             imagePath: "images/artist_headshots/ria_butler.jpg",
             bookNowButtonText: "Book Online",
             bookNowButtonLink:
-                "https://www.fresha.com/a/luxe-hair-artistry-co-st-thomas-20-churchill-crescent-d3m2puen",
+                "https://www.fresha.com/a/luxe-hair-artistry-co-st-thomas-20-churchill-crescent-d3m2puen/booking?menu=true&dppub=true",
             secondaryBookNowButtonText:
                 "Call: 519-702-1111",
             secondaryBookNowButtonLink: "tel:15192071111",
+            externalServicesLink: "https://www.fresha.com/a/luxe-hair-artistry-co-st-thomas-20-churchill-crescent-d3m2puen/booking?menu=true&dppub=true",
         },
     ];
 
