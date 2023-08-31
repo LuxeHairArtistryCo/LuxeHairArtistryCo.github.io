@@ -116,7 +116,7 @@ export namespace Global {
             position: "Aesthetician",
             imagePath: "images/artist_headshots/kim_ferguson.jpg",
             bookNowButtonText: "Text: 705-627-5135",
-            bookNowButtonLink: "sms:+7056275135",
+            bookNowButtonLink: "sms:+17056275135",
             services: [
                 { type: "group", name: "Natural Nail Enhancements", },
                 { type: "subgroup", name: "BioSculpture Gel", description: "BioSculpture Gel is a Superior product making nails beautiful, flexible and durable, without any Damage. It is a one step system that strengthens and promotes the growth of natural nails. It is applied onto the natural nail or used to create strong and comfortable tips for added length. ", },

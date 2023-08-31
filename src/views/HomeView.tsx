@@ -12,7 +12,7 @@ type PropTypes = {
 
 function HomeView({ children }: PropTypes) {
   const heroImageMinHeight = window.innerWidth >= 768 ? "60vh" : "40vh";
-  console.log(window.innerWidth);
+
   return (
     <>
       <HelmetProvider>
