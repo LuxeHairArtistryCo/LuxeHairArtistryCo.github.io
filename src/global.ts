@@ -17,7 +17,11 @@ export namespace Images {
         "images/luxe_logo_dark_transparent_1500h.png";
     export const logo_light =
         "images/luxe_logo_light_transparent_1500h.png";
-    export const interior_photos: string[] = ["images/hero_images/luxe_interior_01.jpg",]
+    export const hero_images: string[] = [
+        "images/hero_images/luxe_hero_01.jpg",
+        "images/hero_images/luxe_hero_02.jpg",
+        "images/hero_images/luxe_hero_03.jpg",
+    ]
 
 }
 

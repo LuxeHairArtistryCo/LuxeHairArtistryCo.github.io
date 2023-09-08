@@ -13,6 +13,11 @@ type PropTypes = {
 function HomeView({ children }: PropTypes) {
   const heroImageMinHeight = window.innerWidth >= 768 ? "60vh" : "40vh";
 
+  const getRandomImage = (imageArray: string[]) => {
+    let randIndex = Math.floor(Math.random() * imageArray.length);
+    return imageArray[randIndex];
+  };
+
   return (
     <>
       <HelmetProvider>
@@ -25,7 +30,7 @@ function HomeView({ children }: PropTypes) {
         </Helmet>
       </HelmetProvider>
       <HeroImage
-        backgroundImagePath={Images.interior_photos[0]}
+        backgroundImagePath={getRandomImage(Images.hero_images)}
         minHeight={heroImageMinHeight}
       >
         <div
