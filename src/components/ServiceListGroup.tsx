@@ -23,14 +23,42 @@ function ServiceListGroup({
   artistID,
   serviceList,
 }: Props) {
-  const getServiceListItemClassName = (service: ServiceListGroupNS.Service) => {
+  const getServiceListItemClassName = (
+    service: ServiceListGroupNS.Service,
+    index: number
+  ) => {
     switch (service.type) {
       case "group":
-        return "list-group-item border-bottom-0 px-4";
+        return "list-group-item px-4 " + (index !== 0 ? "mt-2" : "");
       case "subgroup":
-        return "list-group-item border-0 px-4";
+        return "list-group-item px-4";
       default:
-        return "list-group-item border-0 px-5";
+        return "list-group-item px-5";
+    }
+  };
+
+  const getServiceListItemStyle = (service: ServiceListGroupNS.Service) => {
+    switch (service.type) {
+      case "group":
+        return {
+          background: Colors.tertiary,
+          borderWidth: 1,
+          borderColor: Colors.dark_a10,
+          borderStyle: "solid",
+          borderBottomWidth: 0,
+          borderLeftWidth: 0,
+          borderRightWidth: 0,
+        };
+      case "subgroup":
+        return {
+          background: Colors.tertiary,
+          border: 0,
+        };
+      default:
+        return {
+          background: Colors.tertiary,
+          border: 0,
+        };
     }
   };
 
@@ -49,12 +77,12 @@ function ServiceListGroup({
     }
     return (
       <>
-        <ServiceListItemTitle className="card-title">
+        <ServiceListItemTitle className="my-0">
           {service.name}
           <i>{service.price !== undefined ? " --- " + service.price : ""}</i>
         </ServiceListItemTitle>
         {service.description !== undefined && (
-          <p className="ps-5">
+          <p className="ps-4 mb-0">
             <i>{service.description}</i>
           </p>
         )}
@@ -67,12 +95,9 @@ function ServiceListGroup({
       <ul className="list-group list-group-flush">
         {serviceList.map((service, index) => (
           <li
-            className={getServiceListItemClassName(service)}
+            className={getServiceListItemClassName(service, index)}
             key={artistID + index}
-            style={{
-              background: Colors.tertiary,
-              borderTopColor: Colors.dark,
-            }}
+            style={getServiceListItemStyle(service)}
           >
             {getServiceListItem(service)}
           </li>

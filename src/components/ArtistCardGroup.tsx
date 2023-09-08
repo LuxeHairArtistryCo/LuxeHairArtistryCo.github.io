@@ -89,40 +89,73 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
     <div className={className}>
       {artistList.map((artist, index) => (
         <div
-          className="card my-3"
+          className="my-3 rounded-4"
           key={artist.id}
-          style={{ background: Colors.tertiary }}
+          style={{
+            background: Colors.tertiary,
+            borderWidth: 1,
+            borderColor: Colors.dark_a10,
+            borderStyle: "solid",
+            overflow: "hidden",
+          }}
         >
           <div
             className={
               "row g-0 d-flex " + (index % 2 === 1 && "flex-row-reverse")
             }
           >
-            <div className="col-md-4 border-start border-end">
-              <img className="card-img" src={artist.imagePath} />
+            <div
+              className="col-md-4"
+              style={{
+                background: Colors.secondary,
+              }}
+            >
+              <img className="img-fluid" src={artist.imagePath} />
             </div>
 
             <div className="col-md-8 d-flex flex-column justify-content-between">
+              {/* Card Header */}
               <div
-                className="card-header text-light"
+                className="px-3 py-1 text-light"
                 style={{
                   background: Colors.primary,
-                  WebkitTextFillColor: Colors.light,
                 }}
               >
-                <h5 className="card-title" style={{ whiteSpace: "pre-line" }}>
+                <h5 className="m-0 mt-1" style={{ whiteSpace: "pre-line" }}>
                   {artist.name}
                 </h5>
-                <h6 className="card-text" style={{ whiteSpace: "pre-line" }}>
+                <h6 className="m-0 mb-1" style={{ whiteSpace: "pre-line" }}>
                   {artist.position}
                 </h6>
               </div>
-              <div className="card-body">
-                <p className="card-text" style={{ whiteSpace: "pre-line" }}>
+              {/* Card Body */}
+              <div
+                className="flex-fill px-3 py-1"
+                style={{
+                  background: Colors.tertiary,
+                  borderWidth: 1,
+                  borderColor: Colors.dark_a10,
+                  borderStyle: "solid",
+                  borderTopWidth: 0,
+                  borderBottomWidth: 0,
+                }}
+              >
+                <p className="m-0" style={{ whiteSpace: "pre-line" }}>
                   {artist.bio}
                 </p>
               </div>
-              <div className="card-footer border-bottom">
+              {/* Card Footer */}
+              <div
+                className="px-3 py-1 text-light"
+                style={{
+                  background: Colors.secondary,
+                  borderWidth: 1,
+                  borderColor: Colors.dark_a10,
+                  borderStyle: "solid",
+                  borderTopWidth: 0,
+                  borderBottomWidth: 0,
+                }}
+              >
                 <div className="row d-flex justify-content-center mx-0">
                   <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
                     <ReactLink
@@ -163,12 +196,12 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
           </div>
           {artist.services !== undefined && artist.services.length !== 0 && (
             <div
-              className="row g-0 collapse border-top"
+              className="row g-0 collapse"
               id={"dropdown" + artist.id}
               style={{ background: Colors.tertiary }}
             >
               <ServiceListGroup
-                className="col my-2"
+                className="col mb-1"
                 artistID={artist.id}
                 serviceList={artist.services}
               />

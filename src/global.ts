@@ -2,13 +2,14 @@ import { ArtistCardGroupNS } from "./components/ArtistCardGroup";
 
 export namespace Colors {
     export const primary = "#3D5949";
-    export const secondary = "#D4E1DB";
+    export const secondary = "#CFDED7";
     export const tertiary = "#DAE7E1";
     export const light = "#FFFFFF";
     export const dark = "#212529";
     export const dark_a66 = "#212529AA";
     export const dark_a50 = "#2125297F";
     export const dark_a33 = "#21252955";
+    export const dark_a10 = "#2125291A";
 }
 
 export namespace Images {
