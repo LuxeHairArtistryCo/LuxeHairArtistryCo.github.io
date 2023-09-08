@@ -61,7 +61,7 @@ export namespace Global {
             id: "rhonda-marttunen",
             name: "Rhonda Marttunen",
             position: "Hairstylist & Owner",
-            bio: "With over 30 years of experience, Rhonda has built up a loyal clientele as a newcomer to St Thomas in 2016. She offers services including colours, cuts, highlights, and balayage, with you and your hair being her top priority. She is also certified in fusion hair extensions to help you achieve your dream hair.",
+            bio: "With over 30 years of experience, Rhonda has expertise in many services, including cuts, colours, highlights, and balayage, and is also certified in fusion hair extensions. She continues to grow her repertoire by staying up to date on current trends while preserving the health of the client's hair. Rhonda has built a dedicated clientele since arriving to St Thomas in 2016, as she consistently listens to her clients, delivering stunning looks each time. Don't hesitate - book with Rhonda today and let her help you achieve your dream hair!",
             imagePath: "images/artist_headshots/rhonda_marttunen.jpg",
             bookNowButtonText:
                 "Text: 226-998-1227",
@@ -113,7 +113,8 @@ export namespace Global {
         {
             id: "kim-ferguson",
             name: "Kim Ferguson",
-            position: "Aesthetician",
+            position: "Certified Aesthetician & Owner of The Orchid Room at Luxe",
+            bio: "Kim has been a certified aesthetician for nearly 25 years. Originally hailing from Barrie, Ontario, Kim owned a successful day spa there for 14 years before moving to beautiful St.Thomas in 2017. Since that time, Kim has gained a loyal clientele as a result of her precision and great attention to detail.\nKim feels it’s of the utmost importance to stay informed on the upcoming trends and the best, safest practices for her clients. She enjoys working with new innovative products and services and has mentored new upcoming aestheticians to the industry.\nKim has a passion for Natural Nail enhancements that protect the health of her client’s nails. She takes particular pride in being able to provide her clients with a wide variety of nail art. Feel free to come with ideas! Her experience covers a range of aesthetic services from laser hair removal, medical facials, sugaring, lash extensions and medical pedicures.\nKim looks forward to the chance to pamper you.",
             imagePath: "images/artist_headshots/kim_ferguson.jpg",
             bookNowButtonText: "Text: 705-627-5135",
             bookNowButtonLink: "sms:+17056275135",
@@ -132,7 +133,7 @@ export namespace Global {
                 { type: "group", name: "Fingers & Toes", },
                 { type: "item", name: "Express Mani", price: "$30", description: "Nails trimmed and shaped,finished with a hydrating cream.", },
                 { type: "item", name: "Spa Manicure", price: "$50", description: "Nails shaped, cuticle work. Hands are massaged. Finish the treatment with a polish application.", },
-                { type: "item", name: "Express Pedi", price: "$40", description: "Foot soak, Nail trimmed and shaped finished with a hydrating cream.", },
+                { type: "item", name: "Express Pedi", price: "$45", description: "Foot soak, Nail trimmed and shaped finished with a hydrating cream.", },
                 { type: "item", name: "Sports Pedicure", price: "$55", description: "Foot soak, Nails trimmed and shaped, cuticle and callus work. Finished with a massage.", },
                 { type: "item", name: "Spa Pedicure", price: "$65 (Without Polish $60)", description: "Foot soak, Nails trimmed and shaped, cuticle and callus work. Feet are massaged and  exfoliated with sugar scrub wrapped in a hot towel. Finish the treatment with a polish application.", },
                 { type: "item", name: "Gentleman's Pedicure", price: "$60", description: "Foot soak, Nails trimmed and shaped, cuticle and callus work. Feet are massaged and  exfoliated with sugar scrub wrapped in a hot towel. ", },

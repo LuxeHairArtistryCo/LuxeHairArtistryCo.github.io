@@ -27,7 +27,7 @@ function ArtistsView({ children }: PropTypes) {
           in-house aesthetician.
         </p>
         <ArtistCardGroup artistList={Global.artists_hairstylists} />
-        <h3 className="mt-4">Luxe Aesthetic Studio</h3>
+        <h3 className="mt-4">The Orchid Room at Luxe</h3>
         <ArtistCardGroup artistList={Global.artists_aestheticians} />
         <i className="mx-3 pt-3">
           <small>Prices are subject to change.</small>
