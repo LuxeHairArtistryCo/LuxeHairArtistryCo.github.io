@@ -14,10 +14,10 @@ export namespace Colors {
 
 export namespace Images {
 
-    export const logo_dark =
-        "images/luxe_logo_dark_transparent_1500h.png";
-    export const logo_light =
-        "images/luxe_logo_light_transparent_1500h.png";
+    export const logo =
+        "images/logo/luxe_logo_transparent_1500x600.png";
+    export const icon =
+        "images/icon/luxe_icon_1500x600.png";
     export const hero_images: string[] = [
         "images/hero_images/luxe_hero_01.jpg",
         "images/hero_images/luxe_hero_02.jpg",

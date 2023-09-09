@@ -13,14 +13,14 @@ function App() {
   return (
     <HashRouter>
       <div className="App" style={{ background: Colors.tertiary }}>
-        <Header logoPath={Images.logo_light} />
+        <Header logoPath={Images.logo} />
         <Routes>
           <Route element={<HomeView />} path="/" />
           <Route element={<AboutView />} path="/about" />
           <Route element={<ArtistsView />} path="/artists" />
         </Routes>
         <Footer
-          logoPath={Images.logo_light}
+          logoPath={Images.logo}
           hoursOfOp={Global.hoursOfOp}
           contactInfo={Global.contactInfo}
         />
