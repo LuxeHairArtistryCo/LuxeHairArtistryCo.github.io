@@ -72,7 +72,7 @@ export namespace Global {
                 "Text: 226-998-1227",
             bookNowButtonLink: "sms:+12269981227",
             secondaryBookNowButtonText:
-                "Call: 519-702-1111",
+                "Call: 519-207-1111",
             secondaryBookNowButtonLink: "tel:15192071111",
             services: [
                 { type: "group", name: "Haircuts", },
@@ -108,7 +108,7 @@ export namespace Global {
             bookNowButtonLink:
                 "https://www.fresha.com/a/luxe-hair-artistry-co-st-thomas-20-churchill-crescent-d3m2puen/booking?menu=true&dppub=true",
             secondaryBookNowButtonText:
-                "Call: 519-702-1111",
+                "Call: 519-207-1111",
             secondaryBookNowButtonLink: "tel:15192071111",
             externalServicesLink: "https://www.fresha.com/a/luxe-hair-artistry-co-st-thomas-20-churchill-crescent-d3m2puen/booking?menu=true&dppub=true",
         },
