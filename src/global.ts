@@ -82,9 +82,9 @@ export namespace Global {
                 { type: "group", name: "Colours", },
                 { type: "item", name: "Colour", price: "$85+", },
                 { type: "group", name: "Highlights", },
-                { type: "item", name: "Partial Highlights", price: "$55", },
-                { type: "item", name: "3/4 Head Highlights", price: "$75", },
-                { type: "item", name: "Full Highlights", price: "$95", },
+                { type: "item", name: "Partial Highlights", price: "$55 to $75", },
+                { type: "item", name: "3/4 Head Highlights", price: "$85 to $105", },
+                { type: "item", name: "Full Highlights", price: "$115 to $175+", },
                 { type: "group", name: "Combos", },
                 { type: "item", name: "Wash & Cut", price: "$35", },
                 { type: "item", name: "Wash & Set", price: "$25+", },
@@ -95,6 +95,7 @@ export namespace Global {
                 { type: "item", name: "Balayage", price: "$150+", },
                 { type: "group", name: "Extensions", },
                 { type: "item", name: "Extensions", price: "$250+", },
+
             ],
         },
 
