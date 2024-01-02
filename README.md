@@ -12,6 +12,8 @@ To run the development server:
 
 To build and publish to gh-pages:
 
+First update the package.json file with the new version number.
+
 ```console
    npm run deploy
 ```

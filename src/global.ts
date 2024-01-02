@@ -76,9 +76,9 @@ export namespace Global {
             secondaryBookNowButtonLink: "tel:15192071111",
             services: [
                 { type: "group", name: "Haircuts", },
-                { type: "item", name: "Woman's Haircut", price: "$30", },
-                { type: "item", name: "Men's Haircut", price: "$22", },
-                { type: "item", name: "Kid's Haircut", price: "$22", },
+                { type: "item", name: "Woman's Haircut", price: "$35", },
+                { type: "item", name: "Men's Haircut", price: "$25", },
+                { type: "item", name: "Kid's Haircut", price: "$25", },
                 { type: "group", name: "Colours", },
                 { type: "item", name: "Colour", price: "$85+", },
                 { type: "group", name: "Highlights", },
@@ -86,16 +86,16 @@ export namespace Global {
                 { type: "item", name: "3/4 Head Highlights", price: "$85 to $105", },
                 { type: "item", name: "Full Highlights", price: "$115 to $175+", },
                 { type: "group", name: "Combos", },
-                { type: "item", name: "Wash & Cut", price: "$35", },
-                { type: "item", name: "Wash & Set", price: "$25+", },
-                { type: "item", name: "Wash, Cut & Style", price: "$45+", },
+                { type: "item", name: "Wash & Set", price: "$28+", },
+                { type: "item", name: "Wash & Cut", price: "$40", },
+                { type: "item", name: "Cut & Style", price: "$45+", },
+                { type: "item", name: "Wash, Cut & Style", price: "$50+", },
                 { type: "group", name: "Toner", },
                 { type: "item", name: "Toner", price: "$50", },
                 { type: "group", name: "Balayage", },
-                { type: "item", name: "Balayage", price: "$150+", },
+                { type: "item", name: "Balayage", price: "$175+", },
                 { type: "group", name: "Extensions", },
                 { type: "item", name: "Extensions", price: "$250+", },
-
             ],
         },
 
@@ -107,11 +107,11 @@ export namespace Global {
             imagePath: "images/artist_headshots/ria_butler.jpg",
             bookNowButtonText: "Book Online",
             bookNowButtonLink:
-                "https://www.fresha.com/a/luxe-hair-artistry-co-st-thomas-20-churchill-crescent-d3m2puen/booking?menu=true&dppub=true",
+                "https://www.fresha.com/a/luxe-hair-artistry-co-st-thomas-20-churchill-crescent-d3m2puen/booking?menu=true&dppub=true&employeeId=1196989",
             secondaryBookNowButtonText:
                 "Call: 519-207-1111",
             secondaryBookNowButtonLink: "tel:15192071111",
-            externalServicesLink: "https://www.fresha.com/a/luxe-hair-artistry-co-st-thomas-20-churchill-crescent-d3m2puen/booking?menu=true&dppub=true",
+            externalServicesLink: "https://www.fresha.com/a/luxe-hair-artistry-co-st-thomas-20-churchill-crescent-d3m2puen/booking?menu=true&dppub=true&employeeId=1196989",
         },
     ];
 
