@@ -63,7 +63,7 @@ export namespace Global {
 
     export const artists_hairstylists: ArtistCardGroupNS.Artist[] = [
         {
-            id: "rhonda-marttunen",
+            id: "rhonda",
             name: "Rhonda Marttunen",
             position: "Hairstylist & Owner",
             bio: "With over 30 years of experience, Rhonda has expertise in many services, including cuts, colours, highlights, and balayage, and is also certified in fusion hair extensions. She continues to grow her repertoire by staying up to date on current trends while preserving the health of the client's hair. Rhonda has built a dedicated clientele since arriving to St Thomas in 2016, as she consistently listens to her clients, delivering stunning looks each time. Don't hesitate - book with Rhonda today and let her help you achieve your dream hair!",
@@ -100,7 +100,7 @@ export namespace Global {
         },
 
         {
-            id: "ria-butler",
+            id: "victoria",
             name: "Victoria Butler",
             position: "Hairstylist",
             bio: "Victoria is a St. Thomas based licensed hairstylist, who has worked in the industry since 2014. She has trained with celebrity hair stylists, worked on magazine photo shoots, and prioritizes the integrity of the hair while achieving your desired look. She specializes in corrective colour and blonding services, also offering a variety of cutting and facial waxing services.",
@@ -117,7 +117,7 @@ export namespace Global {
 
     export const artists_aestheticians: ArtistCardGroupNS.Artist[] = [
         {
-            id: "kim-ferguson",
+            id: "kim",
             name: "Kim Ferguson",
             position: "Certified Aesthetician & Owner of The Orchid Room at Luxe",
             bio: "Kim has been a certified aesthetician for nearly 25 years. Originally hailing from Barrie, Ontario, Kim owned a successful day spa there for 14 years before moving to beautiful St.Thomas in 2017. Since that time, Kim has gained a loyal clientele as a result of her precision and great attention to detail.\nKim feels it’s of the utmost importance to stay informed on the upcoming trends and the best, safest practices for her clients. She enjoys working with new innovative products and services and has mentored new upcoming aestheticians to the industry.\nKim has a passion for Natural Nail enhancements that protect the health of her client’s nails. She takes particular pride in being able to provide her clients with a wide variety of nail art. Feel free to come with ideas! Her experience covers a range of aesthetic services from laser hair removal, medical facials, sugaring, lash extensions and medical pedicures.\nKim looks forward to the chance to pamper you.",

@@ -1,4 +1,4 @@
-import { Routes, Route, HashRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Header from "./components/Header";
 import "bootstrap/dist/js/bootstrap.bundle";
 
@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div className="App" style={{ background: Colors.tertiary }}>
-      <HashRouter>
+      <BrowserRouter>
         <Header logoPath={Images.logo} />
         <Routes>
           <Route element={<HomeView />} path="/" />
@@ -24,7 +24,7 @@ function App() {
           hoursOfOp={Global.hoursOfOp}
           contactInfo={Global.contactInfo}
         />
-      </HashRouter>
+      </BrowserRouter>
     </div>
   );
 }

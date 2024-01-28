@@ -14,6 +14,16 @@ To build and publish to gh-pages:
 
 First update the package.json file with the new version number.
 
+Then push changes to github with a commit message beginning with the version number:
+
+```console
+   git add *
+   git commit -m "X.X.X: Commit Message"
+   git push
+```
+
+Finally deploy the updated website:
+
 ```console
    npm run deploy
 ```

@@ -91,6 +91,7 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
         <div
           className="my-3 rounded-4"
           key={artist.id}
+          id={artist.id}
           style={{
             background: Colors.tertiary,
             borderWidth: 1,
@@ -105,15 +106,32 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
             }
           >
             <div
-              className="col-md-4"
+              className="col-md-4 col-lg-3 d-flex align-items-center justify-content-center"
               style={{
                 background: Colors.secondary,
               }}
             >
-              <img className="img-fluid" src={artist.imagePath} />
+              {/* Artist images on mobile */}
+              <img
+                className="img-fluid d-md-none"
+                src={artist.imagePath}
+                style={{
+                  height: 250,
+                  objectFit: "cover",
+                }}
+              />
+              {/* Artist images on desktop */}
+              <img
+                className="img-fluid d-none d-md-block"
+                src={artist.imagePath}
+                style={{
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+              />
             </div>
 
-            <div className="col-md-8 d-flex flex-column justify-content-between">
+            <div className="col-md d-flex flex-column justify-content-between">
               {/* Card Header */}
               <div
                 className="px-3 py-1 text-light"
