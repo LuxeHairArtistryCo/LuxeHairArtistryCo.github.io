@@ -25,6 +25,7 @@ function Header({ children, className, logoPath, logoMaxHeight }: Props) {
           <ReactLink className="navbar-brand" to="/">
             <img
               src={logoPath}
+              alt="Luxe Hair Artistry Co."
               className="header-image"
               style={{ maxHeight: headerLogoMaxHeight }}
             />

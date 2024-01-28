@@ -2,7 +2,7 @@
 
 Website for Luxe Hair Artistry Co located in St Thomas, ON, Canada.
 
-### Run Development Enviroment
+### Run Development Environment
 
 To run the development server:
 

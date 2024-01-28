@@ -115,6 +115,7 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
               <img
                 className="img-fluid d-md-none"
                 src={artist.imagePath}
+                alt={artist.name}
                 style={{
                   height: 250,
                   objectFit: "cover",
@@ -124,6 +125,7 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
               <img
                 className="img-fluid d-none d-md-block"
                 src={artist.imagePath}
+                alt={artist.name}
                 style={{
                   height: "100%",
                   objectFit: "cover",
