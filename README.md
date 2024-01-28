@@ -2,7 +2,7 @@
 
 Website for Luxe Hair Artistry Co located in St Thomas, ON, Canada.
 
-## Dev Help
+### Run Development Enviroment
 
 To run the development server:
 
@@ -10,7 +10,7 @@ To run the development server:
    npm run dev
 ```
 
-To build and publish to gh-pages:
+### Build and Publish to gh-pages
 
 First update the package.json file with the new version number.
 
@@ -28,7 +28,7 @@ Finally deploy the updated website:
    npm run deploy
 ```
 
-Password to unprotect the Pricelist Excel Sheet:
+### Password to unprotect the Pricelist Excel Sheet
 
 ```console
    luxe_pricelist

@@ -1,8 +1,8 @@
 {
   "name": "luxehairartistryco-website",
-  "homepage": "https://www.luxehairartistry.ca/#",
+  "homepage": "https://www.luxehairartistry.ca/",
   "private": true,
-  "version": "1.0.3a",
+  "version": "1.0.4",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
