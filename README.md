@@ -28,7 +28,7 @@ Finally deploy the updated website:
    npm run deploy
 ```
 
-### Password to unprotect the Pricelist Excel Sheet
+### Password to unprotect the Artist Info Excel Sheet
 
 ```console
    luxe_pricelist

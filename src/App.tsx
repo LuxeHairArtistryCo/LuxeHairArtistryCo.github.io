@@ -6,8 +6,8 @@ import "./App.css";
 import HomeView from "./views/HomeView";
 import AboutView from "./views/AboutView";
 import ArtistsView from "./views/ArtistsView";
-import { Colors, Images, Global } from "./global";
 import Footer from "./components/Footer";
+import { Colors, Images, contactInfo, hoursOfOp } from "./constants";
 
 function App() {
   return (
@@ -21,8 +21,8 @@ function App() {
         </Routes>
         <Footer
           logoPath={Images.logo}
-          hoursOfOp={Global.hoursOfOp}
-          contactInfo={Global.contactInfo}
+          hoursOfOp={hoursOfOp}
+          contactInfo={contactInfo}
         />
       </BrowserRouter>
     </div>

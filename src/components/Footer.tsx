@@ -1,11 +1,12 @@
 import { ReactNode } from "react";
-import { Links, Global, Colors } from "../global";
+import { HoursOfOp } from "../datatypes";
+import { Colors, Links } from "../constants";
 
 type Props = {
   children?: ReactNode;
   className?: string;
   logoPath: string;
-  hoursOfOp: Global.HoursOfOp;
+  hoursOfOp: HoursOfOp;
   contactInfo: string[][];
 };
 

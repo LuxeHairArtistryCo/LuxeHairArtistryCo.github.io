@@ -3,8 +3,8 @@ import { ReactNode } from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import HeroImage from "../components/HeroImage";
 import InstagramCarousel from "../components/InstagramCarousel";
-import { Colors, Images } from "../global";
 import { Link as ReactLink } from "react-router-dom";
+import { Colors, Images } from "../constants";
 
 type PropTypes = {
   children?: ReactNode;

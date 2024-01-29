@@ -1,6 +1,6 @@
 import { Link as ReactLink } from "react-router-dom";
 import { ReactNode } from "react";
-import { Colors } from "../global";
+import { Colors } from "../constants";
 
 type Props = {
   children?: ReactNode;

@@ -2,7 +2,10 @@ import { ReactNode } from "react";
 
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import ArtistCardGroup from "../components/ArtistCardGroup";
-import { Global } from "../global";
+import {
+  artists_aestheticians,
+  artists_hairstylists,
+} from "../constants_artists";
 
 type PropTypes = {
   children?: ReactNode;
@@ -26,11 +29,11 @@ function ArtistsView({ children }: PropTypes) {
           We offer a wide variety of serivces between our hairstylists and
           in-house aesthetician.
         </p>
-        <ArtistCardGroup artistList={Global.artists_hairstylists} />
+        <ArtistCardGroup artistList={artists_hairstylists} />
         <h3 className="mt-4" id="orchid-room">
           The Orchid Room at Luxe
         </h3>
-        <ArtistCardGroup artistList={Global.artists_aestheticians} />
+        <ArtistCardGroup artistList={artists_aestheticians} />
         <i className="mx-3 pt-3">
           <small>Prices are subject to change.</small>
         </i>

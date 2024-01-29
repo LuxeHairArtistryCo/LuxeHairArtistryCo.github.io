@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Colors } from "../global";
+import { Colors } from "../constants";
 
 interface Props {
   children?: ReactNode;

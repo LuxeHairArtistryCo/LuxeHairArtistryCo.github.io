@@ -1,34 +1,31 @@
 import { ReactNode } from "react";
-import ServiceListGroup, { ServiceListGroupNS } from "./ServiceListGroup";
+import ServiceListGroup from "./ServiceListGroup";
 import { Link as ReactLink } from "react-router-dom";
-import { Colors } from "../global";
-
-export namespace ArtistCardGroupNS {
-  export type Artist = {
-    id: string;
-    name: string;
-    position: string;
-    bio?: string;
-    imagePath: string;
-    bookNowButtonText: string;
-    bookNowButtonLink: string;
-    secondaryBookNowButtonText?: string;
-    secondaryBookNowButtonLink?: string;
-    services?: ServiceListGroupNS.Service[];
-    externalServicesLink?: string;
-  };
-}
+import { Colors, Images } from "../constants";
+import { Artist } from "../datatypes";
 
 interface Props {
   children?: ReactNode;
   className?: string;
-  artistList: ArtistCardGroupNS.Artist[];
+  artistList: Artist[];
 }
 
 function ArtistCardGroup({ children, className, artistList }: Props) {
   const serviceListButtonText = "See Full Service List";
 
-  const getServiceListButton = (artist: ArtistCardGroupNS.Artist) => {
+  const getArtistId = (artist: Artist) => {
+    return artist.name.split(" ")[0].toLowerCase();
+  };
+
+  const getArtistImagePath = (artist: Artist) => {
+    return (
+      Images.artist_headshot_path +
+      artist.name.replace(" ", "_").toLowerCase() +
+      Images.artist_headshot_filetype
+    );
+  };
+
+  const getServiceListButton = (artist: Artist) => {
     var isInternalServiceList =
       artist.services !== undefined && artist.services.length !== 0;
     var isExternalServiceList = artist.externalServicesLink !== undefined;
@@ -46,7 +43,7 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
           className="btn text-light"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target={"#dropdown" + artist.id}
+          data-bs-target={"#dropdown" + getArtistId(artist)}
           aria-expanded="false"
           style={{
             background: Colors.dark,
@@ -90,8 +87,8 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
       {artistList.map((artist, index) => (
         <div
           className="my-3 rounded-4"
-          key={artist.id}
-          id={artist.id}
+          key={getArtistId(artist)}
+          id={getArtistId(artist)}
           style={{
             background: Colors.tertiary,
             borderWidth: 1,
@@ -114,7 +111,7 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
               {/* Artist images on mobile */}
               <img
                 className="img-fluid d-md-none"
-                src={artist.imagePath}
+                src={getArtistImagePath(artist)}
                 alt={artist.name}
                 style={{
                   height: 250,
@@ -124,7 +121,7 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
               {/* Artist images on desktop */}
               <img
                 className="img-fluid d-none d-md-block"
-                src={artist.imagePath}
+                src={getArtistImagePath(artist)}
                 alt={artist.name}
                 style={{
                   height: "100%",
@@ -180,7 +177,7 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
                   <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
                     <ReactLink
                       className="btn text-light"
-                      to={artist.bookNowButtonLink}
+                      to={artist.primaryButtonLink}
                       role="button"
                       target="_blank"
                       style={{
@@ -189,14 +186,14 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
                         border: Colors.primary,
                       }}
                     >
-                      {artist.bookNowButtonText}
+                      {artist.primaryButtonText}
                     </ReactLink>
                   </div>
-                  {artist.secondaryBookNowButtonLink !== undefined && (
+                  {artist.secondaryButtonLink !== undefined && (
                     <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
                       <ReactLink
                         className="btn text-light"
-                        to={artist.secondaryBookNowButtonLink}
+                        to={artist.secondaryButtonLink}
                         role="button"
                         target="_blank"
                         style={{
@@ -205,7 +202,7 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
                           border: Colors.primary,
                         }}
                       >
-                        {artist.secondaryBookNowButtonText}
+                        {artist.secondaryButtonText}
                       </ReactLink>
                     </div>
                   )}
@@ -217,12 +214,12 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
           {artist.services !== undefined && artist.services.length !== 0 && (
             <div
               className="row g-0 collapse"
-              id={"dropdown" + artist.id}
+              id={"dropdown" + getArtistId(artist)}
               style={{ background: Colors.tertiary }}
             >
               <ServiceListGroup
                 className="col mb-1"
-                artistID={artist.id}
+                artistID={getArtistId(artist)}
                 serviceList={artist.services}
               />
             </div>

@@ -1,20 +1,12 @@
 import { ReactNode } from "react";
-import { Colors } from "../global";
-
-export namespace ServiceListGroupNS {
-  export type Service = {
-    type: "group" | "subgroup" | "item";
-    name: string;
-    description?: string;
-    price?: string;
-  };
-}
+import { Service } from "../datatypes";
+import { Colors } from "../constants";
 
 interface Props {
   children?: ReactNode;
   className?: string;
   artistID: string;
-  serviceList: ServiceListGroupNS.Service[];
+  serviceList: Service[];
 }
 
 function ServiceListGroup({
@@ -23,10 +15,7 @@ function ServiceListGroup({
   artistID,
   serviceList,
 }: Props) {
-  const getServiceListItemClassName = (
-    service: ServiceListGroupNS.Service,
-    index: number
-  ) => {
+  const getServiceListItemClassName = (service: Service, index: number) => {
     switch (service.type) {
       case "group":
         return "list-group-item px-4 " + (index !== 0 ? "mt-2" : "");
@@ -37,7 +26,7 @@ function ServiceListGroup({
     }
   };
 
-  const getServiceListItemStyle = (service: ServiceListGroupNS.Service) => {
+  const getServiceListItemStyle = (service: Service) => {
     switch (service.type) {
       case "group":
         return {
@@ -62,7 +51,7 @@ function ServiceListGroup({
     }
   };
 
-  const getServiceListItem = (service: ServiceListGroupNS.Service) => {
+  const getServiceListItem = (service: Service) => {
     var ServiceListItemTitle: keyof JSX.IntrinsicElements;
     switch (service.type) {
       case "group":
