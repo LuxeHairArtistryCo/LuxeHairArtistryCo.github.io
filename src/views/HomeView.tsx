@@ -37,13 +37,16 @@ function HomeView({ children }: PropTypes) {
           className="container d-flex flex-column px-3 my-4"
           style={{ minHeight: heroImageMinHeight }}
         >
-          <h1 className="mb-4">Welcome to Luxe</h1>
-          <h5></h5>
+          <h1 className="mb-4">Welcome to Luxe Hair Artistry Co.</h1>
+          <h6>
+            View our talented hairstylists and aestheticians to book your next
+            appointment.
+          </h6>
 
-          <div className="d-flex flex-col justify-content-center my-auto pb-3">
+          <div className="d-flex flex-col justify-content-center my-5">
             <ReactLink
               className="btn text-light"
-              to="/artists"
+              to="/hairstylists"
               role="button"
               style={{
                 whiteSpace: "pre-line",
@@ -51,7 +54,21 @@ function HomeView({ children }: PropTypes) {
                 border: Colors.primary,
               }}
             >
-              <h6 className="p-1 m-0">See Our Artists</h6>
+              <h6 className="p-1 m-0">See Our Hairstylists</h6>
+            </ReactLink>
+          </div>
+          <div className="d-flex flex-col justify-content-center">
+            <ReactLink
+              className="btn text-light"
+              to="/aestheticians"
+              role="button"
+              style={{
+                whiteSpace: "pre-line",
+                background: Colors.primary,
+                border: Colors.primary,
+              }}
+            >
+              <h6 className="p-1 m-0">See Our Aestheticians</h6>
             </ReactLink>
           </div>
         </div>

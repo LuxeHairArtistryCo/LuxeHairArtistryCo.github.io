@@ -42,6 +42,16 @@ secondaryButtonText: "Call: 519-207-1111",
 secondaryButtonLink: "tel:15192071111",
 externalServicesLink: "https://www.fresha.com/a/luxe-hair-artistry-co-st-thomas-20-churchill-crescent-d3m2puen/booking?menu=true&dppub=true&employeeId=1196989",
 },
+{
+name: "Amanda Arends",
+position: "Junior Hairstylist",
+bio: "Special: 10% off the listed prices of all appointments when you book with Amanda!\nAmanda is a junior hairstylist. She completed the hairstyling program at Wheable in November 2023. As part of her program, she did a co-op placement at For The Look Salon and Spa in Dorchester and at First Choice Haircutters. After excelling in her courses, she is excited to begin her new career.",
+primaryButtonText: "Book Online",
+primaryButtonLink: "https://squareup.com/appointments/book/k2t8zozwpu8n5w/LZ0J6HENZDD2W/start",
+secondaryButtonText: "Call: 519-207-1111",
+secondaryButtonLink: "tel:15192071111",
+externalServicesLink: "https://squareup.com/appointments/book/k2t8zozwpu8n5w/LZ0J6HENZDD2W/start",
+},
 ];
 export const artists_aestheticians: Artist[] = [
 {

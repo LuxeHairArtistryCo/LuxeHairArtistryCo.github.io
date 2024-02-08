@@ -5,9 +5,10 @@ import "bootstrap/dist/js/bootstrap.bundle";
 import "./App.css";
 import HomeView from "./views/HomeView";
 import AboutView from "./views/AboutView";
-import ArtistsView from "./views/ArtistsView";
 import Footer from "./components/Footer";
 import { Colors, Images, contactInfo, hoursOfOp } from "./constants";
+import HairstylistsView from "./views/HairstylistsView";
+import AestheticiansView from "./views/AestheticiansView";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         <Routes>
           <Route element={<HomeView />} path="/" />
           <Route element={<AboutView />} path="/about" />
-          <Route element={<ArtistsView />} path="/artists" />
+          <Route element={<HairstylistsView />} path="/hairstylists" />
+          <Route element={<AestheticiansView />} path="/aestheticians" />
         </Routes>
         <Footer
           logoPath={Images.logo}

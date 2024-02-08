@@ -82,12 +82,41 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
     );
   };
 
+  const getFormattedArtistBio = (artist: Artist) => {
+    if (!artist.bio) {
+      return <p></p>;
+    }
+    var bioParagraphs = artist.bio?.split("\n");
+
+    var bioParagraphElements: JSX.Element[] = [];
+    bioParagraphs.forEach((paragraph) => {
+      if (paragraph.toUpperCase().startsWith("SPECIAL")) {
+        bioParagraphElements.push(
+          <p className="m-0">
+            <b>
+              <i>{paragraph}</i>
+            </b>
+          </p>
+        );
+      } else {
+        bioParagraphElements.push(<p className="m-0">{paragraph}</p>);
+      }
+    });
+    return (
+      <>
+        {bioParagraphElements.map((element, index) => (
+          <div key={getArtistId(artist) + index}>{element}</div>
+        ))}
+      </>
+    );
+  };
+
   return (
     <div className={className}>
       {artistList.map((artist, index) => (
         <div
           className="my-3 rounded-4"
-          key={getArtistId(artist)}
+          key={"artistCardGroup" + getArtistId(artist)}
           id={getArtistId(artist)}
           style={{
             background: Colors.tertiary,
@@ -157,9 +186,9 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
                   borderBottomWidth: 0,
                 }}
               >
-                <p className="m-0" style={{ whiteSpace: "pre-line" }}>
-                  {artist.bio}
-                </p>
+                <div className="m-0" style={{ whiteSpace: "pre-line" }}>
+                  {getFormattedArtistBio(artist)}
+                </div>
               </div>
               {/* Card Footer */}
               <div
@@ -219,7 +248,7 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
             >
               <ServiceListGroup
                 className="col mb-1"
-                artistID={getArtistId(artist)}
+                artistID={"serviceListGroup" + getArtistId(artist)}
                 serviceList={artist.services}
               />
             </div>

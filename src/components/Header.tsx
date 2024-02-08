@@ -42,14 +42,20 @@ function Header({ children, className, logoPath, logoMaxHeight }: Props) {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="navbar-collapse collapse" id="navbar">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <ReactLink className="nav-link text-light" to="/artists">
-                  Artists
+            <ul className="navbar-nav me-auto mb-2 mb-md-0">
+              <li className="nav-item px-1">
+                <ReactLink className="nav-link text-light" to="/hairstylists">
+                  Hairstylists
                 </ReactLink>
               </li>
 
-              <li className="nav-item">
+              <li className="nav-item px-1">
+                <ReactLink className="nav-link text-light" to="/aestheticians">
+                  Aestheticians
+                </ReactLink>
+              </li>
+
+              <li className="nav-item px-1">
                 <ReactLink className="nav-link text-light" to="/about">
                   About
                 </ReactLink>
