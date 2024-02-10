@@ -45,7 +45,7 @@ externalServicesLink: "https://www.fresha.com/a/luxe-hair-artistry-co-st-thomas-
 {
 name: "Amanda Arends",
 position: "Junior Hairstylist",
-bio: "Special: 10% off regular prices when you book with Amanda!\nAmanda is a junior hairstylist. She completed the hairstyling program at Wheable in November 2023. As part of her program, she did a co-op placement at For The Look Salon and Spa in Dorchester and at First Choice Haircutters. After excelling in her courses, she is excited to begin her new career.",
+bio: "Special! 10% off all services when you book with Amanda! Please note that the listed prices include the discount.\nAmanda is a junior hairstylist. She completed the hairstyling program at Wheable in November 2023. As part of her program, she did a co-op placement at For The Look Salon and Spa in Dorchester and at First Choice Haircutters. After excelling in her courses, she is excited to begin her new career.",
 primaryButtonText: "Book Online",
 primaryButtonLink: "https://squareup.com/appointments/book/k2t8zozwpu8n5w/LZ0J6HENZDD2W/start",
 secondaryButtonText: "Call: 519-207-1111",
