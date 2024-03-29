@@ -145,6 +145,7 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
                 style={{
                   height: 250,
                   objectFit: "cover",
+                  aspectRatio: "1x1",
                 }}
               />
               {/* Artist images on desktop */}
