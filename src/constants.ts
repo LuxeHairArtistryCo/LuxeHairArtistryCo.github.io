@@ -2,8 +2,8 @@ import { HoursOfOp } from "./datatypes";
 
 export namespace Colors {
     export const primary = "#3D5949";
-    export const secondary = "#D2D2D2";
-    export const tertiary = "#E5E5E5";
+    export const secondary = "#D2D2D2";     // CFDED7 or D2D2D2
+    export const tertiary = "#E5E5E5";      // DAE7E1 or E5E5E5
     export const light = "#FFFFFF";
     export const dark = "#212529";
     export const dark_a66 = "#212529AA";
