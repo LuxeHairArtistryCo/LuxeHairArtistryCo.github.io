@@ -52,7 +52,7 @@ services: [
 {
 name: "Victoria Butler",
 position: "Hairstylist",
-bio: "Victoria is a St. Thomas based licensed hairstylist, who has worked in the industry since 2014. She has trained with celebrity hair stylists, worked on magazine photo shoots, and prioritizes the integrity of the hair while achieving your desired look. She specializes in corrective colour and blonding services, also offering a variety of cutting and facial waxing services.",
+bio: "Victoria (Ria) is a St. Thomas based licensed hairstylist, who has worked in the industry since 2014. She has trained with celebrity hair stylists, worked on magazine photo shoots, and prioritizes the integrity of the hair while achieving your desired look. Victoria is a client-centric stylist, who loves to pair a client's at-home hair care routine with their hair goals to ensure they can recreate their style in every day life. She specializes in corrective colour and foiling, also offering a variety of cutting and facial waxing services. Click the link below to BOOK ONLINE with Victoria today!",
 primaryButtonText: "Book Online",
 primaryButtonLink: "https://www.fresha.com/a/luxe-hair-artistry-co-st-thomas-20-churchill-crescent-d3m2puen/booking?menu=true&dppub=true&employeeId=1196989",
 secondaryButtonText: "Call: 519-207-1111",

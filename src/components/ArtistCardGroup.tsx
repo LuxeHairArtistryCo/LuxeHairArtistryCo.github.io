@@ -40,11 +40,12 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
     if (isInternalServiceList) {
       ServiceListButton = (
         <button
-          className="btn text-light"
+          className="btn text-light p-1 p-md-2"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target={"#dropdown" + getArtistId(artist)}
           aria-expanded="false"
+
           style={{
             background: Colors.dark,
             border: Colors.dark,
@@ -111,6 +112,56 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
     );
   };
 
+  const getBookingButtons = (artist: Artist) => {
+    return <div
+      className="px-3 py-4 py-md-1 text-light"
+      style={{
+        background: Colors.secondary,
+        borderWidth: 1,
+        borderColor: Colors.dark_a10,
+        borderStyle: "solid",
+        borderTopWidth: 0,
+        borderBottomWidth: 0,
+      }}
+    >
+      <div className="row d-flex justify-content-between mx-0">
+        <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
+          <ReactLink
+            className="btn text-light p-1 p-md-2"
+            to={artist.primaryButtonLink}
+            role="button"
+            target="_blank"
+            style={{
+              whiteSpace: "pre-line",
+              background: Colors.primary,
+              border: Colors.primary,
+            }}
+          >
+            {artist.primaryButtonText}
+          </ReactLink>
+        </div>
+        {artist.secondaryButtonLink !== undefined && (
+          <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
+            <ReactLink
+              className="btn text-light p-1 p-md-2"
+              to={artist.secondaryButtonLink}
+              role="button"
+              target="_blank"
+              style={{
+                whiteSpace: "pre-line",
+                background: Colors.primary,
+                border: Colors.primary,
+              }}
+            >
+              {artist.secondaryButtonText}
+            </ReactLink>
+          </div>
+        )}
+        {getServiceListButton(artist)}
+      </div>
+    </div>
+  }
+
   return (
     <div className={className}>
       {artistList.map((artist, index) => (
@@ -128,29 +179,18 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
         >
           <div
             className={
-              "row g-0 d-flex " + (index % 2 === 1 && "flex-row-reverse")
+              "row g-0 d-flex justify-content-center " + (index % 2 === 1 && "flex-row-reverse")
             }
           >
+            {/* Artist images on desktop */}
             <div
-              className="col-md-4 col-lg-3 d-flex align-items-center justify-content-center"
+              className="col-md-4 col-lg-3 d-none d-md-block align-items-center justify-content-center"
               style={{
                 background: Colors.secondary,
               }}
             >
-              {/* Artist images on mobile */}
               <img
-                className="img-fluid d-md-none"
-                src={getArtistImagePath(artist)}
-                alt={artist.name}
-                style={{
-                  height: 250,
-                  objectFit: "cover",
-                  aspectRatio: "1x1",
-                }}
-              />
-              {/* Artist images on desktop */}
-              <img
-                className="img-fluid d-none d-md-block"
+                className="img-fluid"
                 src={getArtistImagePath(artist)}
                 alt={artist.name}
                 style={{
@@ -160,10 +200,63 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
               />
             </div>
 
-            <div className="col-md d-flex flex-column justify-content-between">
-              {/* Card Header */}
+            {/* Artist Image and Header and Booking Button on Mobile */}
+            <div className={"row d-flex px-0 align-items-start d-md-none " + (index % 2 === 1 && "flex-row-reverse")}
+              style={{
+                background: Colors.secondary,
+              }}>
+              {/* Artist images on mobile */}
               <div
-                className="px-3 py-1 text-light"
+                className="col-5 px-0 align-items-center justify-content-center"
+                style={{
+                  background: Colors.secondary,
+                }}
+              >
+                <img
+                  className="img-fluid"
+                  src={getArtistImagePath(artist)}
+                  alt={artist.name}
+                  // style={{
+                  //   height: 250,
+                  //   objectFit: "cover",
+                  //   aspectRatio: "1x1",
+                  // }}
+                  style={{
+                    objectFit: "cover",
+                    overflow: "hidden",
+                    minWidth: "100%",
+                  }}
+                />
+              </div>
+
+              <div className="col px-0">
+                {/* Card Header on Mobile */}
+                <div className="m-0 p-0" style={{ overflow: "hidden" }}>
+                  <div
+                    className="px-2 py-1 text-light"
+                    style={{
+                      background: Colors.primary,
+                    }}
+                  >
+                    <h5 className="m-0 mt-1 ms-1 ms-md-0" style={{ whiteSpace: "pre-line" }}>
+                      {artist.name}
+                    </h5>
+                    <h6 className="m-0 mb-1 ms-1 ms-md-0" style={{ whiteSpace: "pre-line" }}>
+                      {artist.position}
+                    </h6>
+                  </div>
+
+                  {/* Booking Buttons on Mobile */}
+                  {getBookingButtons(artist)}
+                </div>
+              </div>
+            </div>
+
+
+            <div className="col-md d-flex flex-column justify-content-between">
+              {/* Card Header on Desktop */}
+              <div
+                className="px-3 py-1 text-light d-none d-md-block"
                 style={{
                   background: Colors.primary,
                 }}
@@ -175,7 +268,8 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
                   {artist.position}
                 </h6>
               </div>
-              {/* Card Body */}
+
+              {/* Card Body for BOTH DESTOP AND MOBILE*/}
               <div
                 className="flex-fill px-3 py-1"
                 style={{
@@ -191,53 +285,9 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
                   {getFormattedArtistBio(artist)}
                 </div>
               </div>
-              {/* Card Footer */}
-              <div
-                className="px-3 py-1 text-light"
-                style={{
-                  background: Colors.secondary,
-                  borderWidth: 1,
-                  borderColor: Colors.dark_a10,
-                  borderStyle: "solid",
-                  borderTopWidth: 0,
-                  borderBottomWidth: 0,
-                }}
-              >
-                <div className="row d-flex justify-content-center mx-0">
-                  <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
-                    <ReactLink
-                      className="btn text-light"
-                      to={artist.primaryButtonLink}
-                      role="button"
-                      target="_blank"
-                      style={{
-                        whiteSpace: "pre-line",
-                        background: Colors.primary,
-                        border: Colors.primary,
-                      }}
-                    >
-                      {artist.primaryButtonText}
-                    </ReactLink>
-                  </div>
-                  {artist.secondaryButtonLink !== undefined && (
-                    <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
-                      <ReactLink
-                        className="btn text-light"
-                        to={artist.secondaryButtonLink}
-                        role="button"
-                        target="_blank"
-                        style={{
-                          whiteSpace: "pre-line",
-                          background: Colors.primary,
-                          border: Colors.primary,
-                        }}
-                      >
-                        {artist.secondaryButtonText}
-                      </ReactLink>
-                    </div>
-                  )}
-                  {getServiceListButton(artist)}
-                </div>
+              {/* Booking Buttons on Desktop */}
+              <div className="d-none d-md-block">
+                {getBookingButtons(artist)}
               </div>
             </div>
           </div>
