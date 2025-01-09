@@ -38,6 +38,7 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
       throw new Error("No Service Lists configured for " + artist.name);
     }
     if (isInternalServiceList) {
+      3.0
       ServiceListButton = (
         <button
           className="btn text-light p-1 p-md-2"
