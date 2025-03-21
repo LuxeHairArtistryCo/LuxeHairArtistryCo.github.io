@@ -45,5 +45,5 @@ export const hoursOfOp: HoursOfOp = {
 export const contactInfo: string[][] = [
     ["Address: ", "20 Churchill Crescent"],
     ["", "St Thomas, ON N5R 1N8"],
-    ["Phone: ", "519-207-1111"],
+    ["Phone: ", "(519) 207-1111"],
 ]
