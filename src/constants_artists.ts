@@ -8,6 +8,7 @@ primaryButtonText: "Text: (226) 998-1227",
 primaryButtonLink: "sms:+12269981227",
 secondaryButtonText: "Call: (519) 207-1111",
 secondaryButtonLink: "tel:15192071111",
+isAcceptingNewClients: true,
 services: [
 {type: "group",name: "Haircuts",description: "Additional time charge for extra long or thick hair",},
 {type: "item",name: "Woman's Haircut",price: "$35+",},
@@ -58,6 +59,7 @@ primaryButtonLink: "https://www.fresha.com/a/luxe-hair-artistry-co-st-thomas-20-
 secondaryButtonText: "Text: (519) 207-1111",
 secondaryButtonLink: "tel:15192071111",
 externalServicesLink: "https://www.fresha.com/a/luxe-hair-artistry-co-st-thomas-20-churchill-crescent-d3m2puen/booking?menu=true&dppub=true&employeeId=1196989",
+isAcceptingNewClients: true,
 },
 {
 name: "Amanda Arends",
@@ -68,6 +70,7 @@ primaryButtonLink: "https://squareup.com/appointments/book/k2t8zozwpu8n5w/LZ0J6H
 secondaryButtonText: "Text: (519) 207-1111",
 secondaryButtonLink: "tel:15192071111",
 externalServicesLink: "https://squareup.com/appointments/book/k2t8zozwpu8n5w/LZ0J6HENZDD2W/start",
+isAcceptingNewClients: true,
 },
 ];
 export const artists_aestheticians: Artist[] = [
@@ -77,6 +80,7 @@ position: "Certified Aesthetician & Owner of The Orchid Room at Luxe",
 bio: "Kim has been a certified aesthetician for nearly 25 years. Originally hailing from Barrie, Ontario, Kim owned a successful day spa there for 14 years before moving to beautiful St.Thomas in 2017. Since that time, Kim has gained a loyal clientele as a result of her precision and great attention to detail.\nKim feels it's of the utmost importance to stay informed on the upcoming trends and the best, safest practices for her clients. She enjoys working with new innovative products and services and has mentored new upcoming aestheticians to the industry.\nKim has a passion for Natural Nail enhancements that protect the health of her client's nails. She takes particular pride in being able to provide her clients with a wide variety of nail art. Feel free to come with ideas! Her experience covers a range of aesthetic services from laser hair removal, medical facials, sugaring, lash extensions and medical pedicures.\nKim looks forward to the chance to pamper you.",
 primaryButtonText: "Text: (437) 385-8925",
 primaryButtonLink: "sms:+14373858925",
+isAcceptingNewClients: true,
 services: [
 {type: "group",name: "Natural Nail Enhancements",},
 {type: "subgroup",name: "BioSculpture Gel",description: "BioSculpture Gel is a Superior product making nails beautiful, flexible and durable, without any Damage. It is a one step system that strengthens and promotes the growth of natural nails. It is applied onto the natural nail or used to create strong and comfortable tips for added length. ",},
@@ -138,6 +142,7 @@ position: "Certified Aesthetician",
 bio: "Megan Hummel is a Certified Medical Aesthetician with four years of experience, specializing in lash extensions and brow artistry. Originally from Kitchener, Megan relocated to St. Thomas four years ago, bringing her passion for aesthetics to the community. Her expertise extends beyond lash extensions, as she is also a certified Ombre powder brow and permanent makeup artist, showcasing her versatile skill set.\nWith a deep love for all aspects of aesthetics, Megan excels in providing top-notch services including facials, waxing, and massage therapy. What sets Megan apart is her dedication to listening to her clients' requests and ensuring that she takes the necessary time to deliver consistent and quality work. Her commitment to excellence and her genuine care for her clients have earned her a strong reputation in the industry.\nMegan's clients appreciate her attention to detail, personalized approach, and her ability to create stunning transformations while prioritizing their comfort and satisfaction. She has a true passion for enhancing natural beauty and empowering her clients.",
 primaryButtonText: "Text: (437) 385-8925",
 primaryButtonLink: "sms:+14373858925",
+isAcceptingNewClients: true,
 services: [
 {type: "group",name: "Natural Nail Enhancements",},
 {type: "subgroup",name: "BioSculpture Gel",description: "BioSculpture Gel is a Superior product making nails beautiful, flexible and durable, without any Damage. It is a one step system that strengthens and promotes the growth of natural nails. It is applied onto the natural nail or used to create strong and comfortable tips for added length. ",},

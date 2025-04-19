@@ -15,6 +15,7 @@ export type Artist = {
     secondaryButtonLink?: string;
     services?: Service[];
     externalServicesLink?: string;
+    isAcceptingNewClients?: boolean;
 };
 
 export type HoursOfOp = {

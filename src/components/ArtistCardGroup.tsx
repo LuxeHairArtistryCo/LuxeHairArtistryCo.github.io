@@ -11,10 +11,21 @@ interface Props {
 }
 
 function ArtistCardGroup({ children, className, artistList }: Props) {
-  const serviceListButtonText = "See Full Service List";
+  const serviceListButtonTextSeeList = "See Full Service List";
+  const serviceListButtonTextHideList = "Hide Service List";
+
+  function toggleServiceListButtonText(artist: Artist) {
+    var button = document.getElementById("servicelistbutton" + getArtistId(artist));
+    if (button == null)
+      return;
+    else if (button.ariaExpanded === 'false')
+      button.innerHTML = serviceListButtonTextSeeList;
+    else
+      button.innerHTML = serviceListButtonTextHideList;
+  }
 
   const getArtistId = (artist: Artist) => {
-    return artist.name.split(" ")[0].toLowerCase();
+    return artist.name.replace(" ", "").toLowerCase();
   };
 
   const getArtistImagePath = (artist: Artist) => {
@@ -38,21 +49,22 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
       throw new Error("No Service Lists configured for " + artist.name);
     }
     if (isInternalServiceList) {
-      3.0
       ServiceListButton = (
         <button
           className="btn text-light p-1 p-md-2"
+          id={"servicelistbutton" + getArtistId(artist)}
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target={"#dropdown" + getArtistId(artist)}
+          data-bs-target={".multi-collapse" + getArtistId(artist)}
+          aria-controls={"dropdown_" + getArtistId(artist) + "_servicelist" + " " + "dropdown_" + getArtistId(artist) + "_description"}
           aria-expanded="false"
-
+          onClick={() => toggleServiceListButtonText(artist)}
           style={{
             background: Colors.dark,
             border: Colors.dark,
           }}
         >
-          {serviceListButtonText}
+          {serviceListButtonTextSeeList}
         </button>
       );
     } else {
@@ -72,7 +84,7 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
             border: Colors.dark,
           }}
         >
-          {serviceListButtonText}
+          {serviceListButtonTextSeeList}
         </ReactLink>
       );
     }
@@ -115,7 +127,7 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
 
   const getBookingButtons = (artist: Artist) => {
     return <div
-      className="px-3 py-4 py-md-1 text-light"
+      className="px-2 py-2 py-md-1"
       style={{
         background: Colors.secondary,
         borderWidth: 1,
@@ -125,39 +137,57 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
         borderBottomWidth: 0,
       }}
     >
-      <div className="row d-flex justify-content-between mx-0">
-        <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
-          <ReactLink
-            className="btn text-light p-1 p-md-2"
-            to={artist.primaryButtonLink}
-            role="button"
-            target="_blank"
-            style={{
-              whiteSpace: "pre-line",
-              background: Colors.primary,
-              border: Colors.primary,
-            }}
-          >
-            {artist.primaryButtonText}
-          </ReactLink>
-        </div>
-        {artist.secondaryButtonLink !== undefined && (
-          <div className="col-md-4 d-flex align-items-center justify-content-center py-2">
-            <ReactLink
-              className="btn text-light p-1 p-md-2"
-              to={artist.secondaryButtonLink}
-              role="button"
-              target="_blank"
+      <div className="row d-flex justify-content-center mx-0">
+        {artist.isAcceptingNewClients &&
+          <>
+            <div className="col-md-4 d-flex align-items-center justify-content-center py-2 text-light">
+              <ReactLink
+                className="btn text-light p-1 p-md-2"
+                to={artist.primaryButtonLink}
+                role="button"
+                target="_blank"
+                style={{
+                  whiteSpace: "pre-line",
+                  background: Colors.primary,
+                  border: Colors.primary,
+                }}
+              >
+                {artist.primaryButtonText}
+              </ReactLink>
+            </div>
+            {artist.secondaryButtonLink !== undefined &&
+              <div className="col-md-4 d-flex align-items-center justify-content-center py-2 text-light">
+                <ReactLink
+                  className="btn text-light p-1 p-md-2"
+                  to={artist.secondaryButtonLink}
+                  role="button"
+                  target="_blank"
+                  style={{
+                    whiteSpace: "pre-line",
+                    background: Colors.primary,
+                    border: Colors.primary,
+                  }}
+                >
+                  {artist.secondaryButtonText}
+                </ReactLink>
+              </div>
+            }
+          </>
+        }
+        {!artist.isAcceptingNewClients &&
+          <div className="col-md-4 d-flex align-items-center justify-content-center py-2 text-dark">
+            <p
+              className="p-1 p-md-2 m-0 rounded-2 text-center"
               style={{
                 whiteSpace: "pre-line",
-                background: Colors.primary,
-                border: Colors.primary,
-              }}
-            >
-              {artist.secondaryButtonText}
-            </ReactLink>
+                background: Colors.secondary,
+                border: Colors.secondary,
+                fontWeight: "bold",
+              }}>
+              No Longer Accepting New Clients
+            </p>
           </div>
-        )}
+        }
         {getServiceListButton(artist)}
       </div>
     </div>
@@ -270,9 +300,29 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
                 </h6>
               </div>
 
-              {/* Card Body for BOTH DESTOP AND MOBILE*/}
+              {/* Card Body for Desktop*/}
               <div
-                className="flex-fill px-3 py-1"
+                className="flex-fill px-3 py-1 d-none d-md-block"
+                id={"dropdown_" + getArtistId(artist) + "_description"}
+                data-parent={"#" + getArtistId(artist)}
+                style={{
+                  background: Colors.tertiary,
+                  borderWidth: 1,
+                  borderColor: Colors.dark_a10,
+                  borderStyle: "solid",
+                  borderTopWidth: 0,
+                  borderBottomWidth: 0,
+                }}
+              >
+                <div className="m-0" style={{ whiteSpace: "pre-line" }}>
+                  {getFormattedArtistBio(artist)}
+                </div>
+              </div>
+              {/* Card Body for Mobile */}
+              <div
+                className={"flex-fill px-3 py-1 d-md-none collapse show multi-collapse" + getArtistId(artist)}
+                id={"dropdown_" + getArtistId(artist) + "_description"}
+                data-parent={"#" + getArtistId(artist)}
                 style={{
                   background: Colors.tertiary,
                   borderWidth: 1,
@@ -294,9 +344,12 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
           </div>
           {artist.services !== undefined && artist.services.length !== 0 && (
             <div
-              className="row g-0 collapse"
-              id={"dropdown" + getArtistId(artist)}
-              style={{ background: Colors.tertiary }}
+              className={"row g- collapse multi-collapse" + getArtistId(artist)}
+              id={"dropdown_" + getArtistId(artist) + "_servicelist"}
+              data-parent={"#" + getArtistId(artist)}
+              style={{
+                background: Colors.tertiary,
+              }}
             >
               <ServiceListGroup
                 className="col mb-1"
