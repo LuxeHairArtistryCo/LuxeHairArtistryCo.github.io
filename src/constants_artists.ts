@@ -64,7 +64,7 @@ isAcceptingNewClients: true,
 {
 name: "Faith Vannoord",
 position: "Junior Hairstylist",
-bio: "Special! 10% off all services when you book with Faith! Please note that the listed prices do not include the discount. The discount will be applied at checkout.\nAs an up and coming hairstylist, Faith is dedicated to providing personalized services to enhance your natural beauty. Passionate about the latest trends and dedicated to making you feel your best, Faith is excited to bring her education to life behind the chair. Book with Faith today to walk out feeling confident in a style that is all you!",
+bio: "Special! 10% off all services when you book with Faith! Please note that the listed prices include the discount.\nAs an up and coming hairstylist, Faith is dedicated to providing personalized services to enhance your natural beauty. Passionate about the latest trends and dedicated to making you feel your best, Faith is excited to bring her education to life behind the chair. Book with Faith today to walk out feeling confident in a style that is all you!",
 primaryButtonText: "Book Online",
 primaryButtonLink: "https://squareup.com/appointments/book/k2t8zozwpu8n5w/LZ0J6HENZDD2W/start",
 secondaryButtonText: "Call: (519) 207-1111",
