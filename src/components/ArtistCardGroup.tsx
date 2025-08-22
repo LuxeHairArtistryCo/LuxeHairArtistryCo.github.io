@@ -46,7 +46,9 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
       throw new Error("Two Service Lists configured for " + artist.name);
     }
     if (!isInternalServiceList && !isExternalServiceList) {
-      throw new Error("No Service Lists configured for " + artist.name);
+      // Commented out error to support having no service list
+      //throw new Error("No Service Lists configured for " + artist.name);
+      return <></>;
     }
     if (isInternalServiceList) {
       ServiceListButton = (
@@ -111,6 +113,14 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
               <i>{paragraph}</i>
             </b>
           </p>
+        );
+      } else if (paragraph.toUpperCase().startsWith("IMPORTANT")) {
+        bioParagraphElements.push(
+          <h5 className="m-0">
+            <b>
+              <i>{paragraph}</i>
+            </b>
+          </h5>
         );
       } else {
         bioParagraphElements.push(<p className="m-0">{paragraph}</p>);

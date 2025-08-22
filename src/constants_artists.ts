@@ -51,17 +51,6 @@ services: [
 ],
 },
 {
-name: "Victoria Butler",
-position: "Hairstylist",
-bio: "Victoria (Ria) is a St. Thomas based licensed hairstylist, who has worked in the industry since 2014. She has trained with celebrity hair stylists, worked on magazine photo shoots, and prioritizes the integrity of the hair while achieving your desired look. Victoria is a client-centric stylist, who loves to pair a client's at-home hair care routine with their hair goals to ensure they can recreate their style in every day life. She specializes in corrective colour and foiling, also offering a variety of cutting and facial waxing services. Click the link to BOOK ONLINE with Victoria today!",
-primaryButtonText: "Book Online",
-primaryButtonLink: "https://www.fresha.com/a/luxe-hair-artistry-co-st-thomas-20-churchill-crescent-d3m2puen/booking?menu=true&dppub=true&employeeId=1196989",
-secondaryButtonText: "Call: (519) 207-1111",
-secondaryButtonLink: "tel:15192071111",
-externalServicesLink: "https://www.fresha.com/a/luxe-hair-artistry-co-st-thomas-20-churchill-crescent-d3m2puen/booking?menu=true&dppub=true&employeeId=1196989",
-isAcceptingNewClients: true,
-},
-{
 name: "Faith Vannoord",
 position: "Junior Hairstylist",
 bio: "Special! 10% off all services when you book with Faith! Please note that the listed prices include the discount.\nAs an up and coming hairstylist, Faith is dedicated to providing personalized services to enhance your natural beauty. Passionate about the latest trends and dedicated to making you feel your best, Faith is excited to bring her education to life behind the chair. Book with Faith today to walk out feeling confident in a style that is all you!",
@@ -70,6 +59,14 @@ primaryButtonLink: "https://squareup.com/appointments/book/k2t8zozwpu8n5w/LZ0J6H
 secondaryButtonText: "Call: (519) 207-1111",
 secondaryButtonLink: "tel:15192071111",
 externalServicesLink: "https://squareup.com/appointments/book/k2t8zozwpu8n5w/LZ0J6HENZDD2W/start",
+isAcceptingNewClients: true,
+},
+{
+name: "Victoria Butler",
+position: "Hairstylist",
+bio: "Important Announcement!\nVictoria (Ria) has relocated to Woodstock! She wants to thank her clients, family, and friends for their unwavering support over the last decade.\nWhile she understands that a 35 minute highway commute may not be ideal for everyone, she would be ecstatic to have you in her chair again!\nClick the link to find out how you can connect with Victoria at her new venture!",
+primaryButtonText: "View Details",
+primaryButtonLink: "https://linktr.ee/victoriaellehairartistry",
 isAcceptingNewClients: true,
 },
 ];
