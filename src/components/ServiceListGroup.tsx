@@ -71,7 +71,7 @@ function ServiceListGroup({
           <i>{service.price !== undefined ? " --- " + service.price : ""}</i>
         </ServiceListItemTitle>
         {service.description !== undefined && (
-          <p className="ps-4 mb-0">
+          <p className={service.type == "group" ? "" : "ps-4 mb-0"}>
             <i>{service.description}</i>
           </p>
         )}
