@@ -65,14 +65,6 @@ secondaryButtonLink: "tel:15192071111",
 externalServicesLink: "https://squareup.com/appointments/book/k2t8zozwpu8n5w/LZ0J6HENZDD2W/start",
 isAcceptingNewClients: true,
 },
-{
-name: "Victoria Butler",
-position: "Hairstylist",
-bio: "Important Announcement!\nVictoria (Ria) has relocated to Woodstock! She wants to thank her clients, family, and friends for their unwavering support over the last decade.\nWhile she understands that a 35 minute highway commute may not be ideal for everyone, she would be ecstatic to have you in her chair again!\nClick the link to find out how you can connect with Victoria at her new venture!",
-primaryButtonText: "View Details",
-primaryButtonLink: "https://linktr.ee/victoriaellehairartistry",
-isAcceptingNewClients: true,
-},
 ];
 export const artists_aestheticians: Artist[] = [
 {
