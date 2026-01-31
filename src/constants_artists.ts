@@ -8,7 +8,7 @@ primaryButtonText: "Text: (226) 998-1227",
 primaryButtonLink: "sms:+12269981227",
 secondaryButtonText: "Call: (519) 207-1111",
 secondaryButtonLink: "tel:15192071111",
-isAcceptingNewClients: true,
+isAcceptingNewClients: false,
 services: [
 {type: "group",name: "Haircuts",description: "Additional time charge for extra long or thick hair",},
 {type: "item",name: "Woman's Haircut",price: "$37+",},
