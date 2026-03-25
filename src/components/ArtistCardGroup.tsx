@@ -152,7 +152,7 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
           <>
             <div className="col-md-4 d-flex align-items-center justify-content-center py-2 text-light">
               <ReactLink
-                className="btn text-light p-1 p-md-2"
+                className="btn text-light p-1 p-md-2 m-2"
                 to={artist.primaryButtonLink}
                 role="button"
                 target="_blank"
@@ -194,7 +194,7 @@ function ArtistCardGroup({ children, className, artistList }: Props) {
                 border: Colors.secondary,
                 fontWeight: "bold",
               }}>
-              No Longer Accepting New Clients
+              Currently Not Accepting New Clients
             </p>
           </div>
         }

@@ -22,7 +22,6 @@ function AestheticiansView({ children }: PropTypes) {
       </HelmetProvider>
       <div className="container d-flex flex-column px-3 my-4">
         <h1>Meet Our Aestheticians</h1>
-        <p className="mx-3 pt-3"></p>
         <ArtistCardGroup artistList={artists_aestheticians} />
         <i className="mx-3 pt-3">
           <small>Prices are subject to change.</small>
