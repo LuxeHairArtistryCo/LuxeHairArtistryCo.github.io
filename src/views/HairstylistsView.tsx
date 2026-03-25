@@ -12,19 +12,19 @@ type PropTypes = {
 function HairstylistsView({ children }: PropTypes) {
   const filteredHairstylists = artists_hairstylists.filter(artist => artist.isAcceptingNewClients);
 
-  const [key, setKey] = React.useState(0);
+  const [, setKey] = React.useState(0);
 
   function toggleFilterButtonText() {
     var button = document.getElementById("filterbutton");
     if (button == null)
       return;
-    else if (button.ariaPressed === 'false') {
+    else if (button.ariaPressed === 'true') {
       button.innerHTML = "Filter by Aritsts Accepting New Clients";
-      button.ariaPressed = 'true';
+      button.ariaPressed = 'false';
     }
     else {
       button.innerHTML = "Remove Filter";
-      button.ariaPressed = 'false';
+      button.ariaPressed = 'true';
     }
     setKey(prevKey => prevKey + 1);
   }
@@ -33,7 +33,7 @@ function HairstylistsView({ children }: PropTypes) {
     var button = document.getElementById("filterbutton");
     if (button == null)
       return false;
-    else if (button.ariaPressed === 'false') {
+    else if (button.ariaPressed === 'true') {
       return true;
     }
     else {
